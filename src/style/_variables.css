@@ -1,0 +1,30 @@
+:root {
+  /* colors */
+    --color-light: rgb(250, 250, 250);
+    --color-dark: rgb(10, 10, 10);
+    --color-main: rgb(107,96,246);
+    --color-grey: #c3c3c3;
+    --color-fonts: rgb(252, 252, 252);
+    --color-highlight: #6ddf8d;
+    --background-color-main: linear-gradient(180deg, rgba(107,96,246,1) 50%, rgba(246,199,168,1) 100%);
+
+    /* spacing */
+    --spacing-small: 10px;
+    --spacing-regular: 12px;
+    --spacing-large: 24px;
+
+    /* fonts */
+    --font-weigth-thin: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    /* font-sizes */
+    --font-size-small: 0.9rem;
+    --font-size-regular: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* colors */
+    --color-grey: rgb(200, 200, 200);
+  }
+}

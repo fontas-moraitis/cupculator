@@ -1,0 +1,32 @@
+@import "_variables";
+
+.ingredientCard,
+.activeIngredientCard {
+    width: 75px;
+    height: 90px;
+    flex-shrink: 0;
+    padding: var(--spacing-small);
+    border-radius: 15px;
+    border: 1px solid var(--color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.activeIngredientCard {
+    color: var(--color-main);
+    overflow: hidden;
+    background-color: var(--color-light);
+}
+
+.ingredientCardIcon,
+.ingredientCardLabel {
+    color: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.ingredientCardIcon {
+    margin-bottom: 4px;
+}
