@@ -1,0 +1,266 @@
+[
+  {
+    "id": "allPurposeFlour",
+    "name": {
+      "en": "Flour"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"125", "us": "142" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "milk",
+    "name": {
+      "en": "Milk"
+    },
+    "unit": "ml",
+    "metrics": {
+      "cup": { "uk":"125", "us": "240" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "bakingPowder",
+    "name": {
+      "en": "Baking powder"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { },
+      "tbsp" : {},
+      "tsp" : { "us": 5 }
+    }
+  },
+  {
+    "id": "bakingSoda",
+    "name": {
+      "en": "Baking soda"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { },
+      "tbsp" : {},
+      "tsp" : { "us": 6 }
+    }
+  },
+  {
+    "id": "fineSeaSalt",
+    "name": {
+      "en": "Sea salt"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { },
+      "tbsp" : {},
+      "tsp" : { "us": 5 }
+    }
+  },
+  {
+    "id": "saltKosher",
+    "name": {
+      "en": "Salt kosher"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { },
+      "tbsp" : {},
+      "tsp" : { "us": 3 }
+    }
+  },
+  {
+    "id": "almondFlour",
+    "name": {
+      "en": "Almond flour"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": "100" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "breadFlour",
+    "name": {
+      "en": "Bread flour"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": "150" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "cakeFlour",
+    "name": {
+      "en": "Cake flour"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": "130" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "oatsRolled",
+    "name": {
+      "en": "Oats rolled"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "us": 100 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "butter",
+    "name": {
+      "en": "Butter"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 226 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "butterMilk",
+    "name": {
+      "en": "Buttermilk"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 260 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "heavyCream",
+    "name": {
+      "en": "Heavy cream"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 238 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "creamCheese",
+    "name": {
+      "en": "Cream cheese"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 212 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "sourCream",
+    "name": {
+      "en": "Sour cream"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 220 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "sugar",
+    "name": {
+      "en": "White sugar"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 190 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "brownSugar",
+    "name": {
+      "en": "Brown sugar"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": 150 },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "powderedSugar",
+    "name": {
+      "en": "Powdered sugar"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": { "uk":"", "us": "130" },
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "honey",
+    "name": {
+      "en": "Honey"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": {},
+      "tbsp" : {"us": 20},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "vegetableOil",
+    "name": {
+      "en": "Vegi oil"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": {"us": 210},
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  },
+  {
+    "id": "vanillaExtract",
+    "name": {
+      "en": "Vanilla extract"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": {},
+      "tbsp" : {},
+      "tsp" : {"us": 4}
+    }
+  },
+  {
+    "id": "cocoaPowder",
+    "name": {
+      "en": "Cocoa powder"
+    },
+    "unit": "g",
+    "metrics": {
+      "cup": {"uk":"", "us": 120},
+      "tbsp" : {},
+      "tsp" : {}
+    }
+  }
+]

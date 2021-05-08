@@ -1,0 +1,9 @@
+@import "../../style/_variables";
+
+.mainContainer {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #efefef;
+}

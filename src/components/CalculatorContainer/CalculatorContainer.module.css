@@ -1,0 +1,14 @@
+@import "../../style/_variables";
+
+.calculatorContainer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculatorContainer__title {
+    color: var(--color-main);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-regular);
+}

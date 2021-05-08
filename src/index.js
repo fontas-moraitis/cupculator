@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+// i18n
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 // components
-import App from './components/App';
+import App from './components/App/App';
 // styles
 import './style/index.css';
 
@@ -11,7 +14,9 @@ import './style/index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <I18nextProvider i18n={i18n}>
+      <App />
+    </I18nextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

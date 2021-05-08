@@ -57,8 +57,15 @@ table {
 input::placeholder {
 	color: var(--color-grey) !important;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+button {
+	background: transparent;
+	outline: none;
+	border: none;
+}
+select {
+	appearance: none;
 }

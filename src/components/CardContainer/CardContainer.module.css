@@ -1,0 +1,19 @@
+@import "../../style/_variables.css";
+
+.cardholder {
+    width: 100%;
+    display: flex;
+    margin-top: var(--spacing-regular);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.cardholder::-webkit-scrollbar {
+    width: 0;
+    display: none;
+
+}
+
+
+   
