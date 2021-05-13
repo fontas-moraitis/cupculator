@@ -1,3 +1,9 @@
 {
-    "cookingConversions": "Μαγειρικές μετατροπές"
+    "cookingConversions": "Μαγειρικές μετατροπές",
+    "calculator": "Υπολογιστής",
+    "conversionsTable": "Πίνακας μετατροπών",
+    "searchIngredient": "Αναζήτησε υλικό",
+    "clickToClear": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
+    "unit": "Μονάδα μέτρησης",
+    "cups": "Κούπες"
 }

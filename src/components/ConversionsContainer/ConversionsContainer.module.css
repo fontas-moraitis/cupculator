@@ -1,0 +1,34 @@
+@import "../../style/_variables.css";
+
+.conversionsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-small);
+}
+
+.conversionsContainer__title {
+    margin-bottom: var(--spacing-regular);
+    color: var(--color-main);
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* Custom styling for table */
+.conversionsTable {
+    border-collapse: initial;
+    border-spacing: var(--spacing-small);
+}
+
+.conversionsTable thead tr td {
+    color: var(--color-dark);
+    font-weight: var(--font-weight-medium);
+    margin: var(--spacing-xsmall);
+}
+
+.conversionsTable tbody tr td {
+    color: var(--color-dark-grey);
+    font-weight: var(--font-weight-thin);
+    margin: var(--spacing-xsmall);
+}

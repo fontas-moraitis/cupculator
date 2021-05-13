@@ -1,3 +1,9 @@
 {
-    "cookingConversions": "Cooking conversions"
+    "cookingConversions": "Cooking conversions",
+    "calculator": "Calculator",
+    "conversionsTable": "Conversions Table",
+    "searchIngredient": "Search for an igredient",
+    "clickToClear": "Click to clear",
+    "unit": "Unit",
+    "cups": "Cups"
 }

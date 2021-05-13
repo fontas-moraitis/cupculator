@@ -9,9 +9,14 @@
 
 .header_container_logo {
     display: flex;
-    gap: var(--spacing-small);
     font-family: 'Montserrat', 'Arial', sans-serif;
-    font-size: var(--font-size-regular);
+    font-size: var(--font-size-large);
     font-weight: var(--font-size-medium);
     color: var(--color-light);
+}
+
+.header_container_logo__title {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-small);
 }

@@ -12,8 +12,36 @@
 .cardholder::-webkit-scrollbar {
     width: 0;
     display: none;
-
 }
 
+@media screen and (min-width: 768px) { 
+    /* Show and style scrollbar for horizontal scrolling on desktops */
+    .cardholder {
+        padding: var(--spacing-regular) 0;
+    }
+    .cardholder::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        display: block;
+    }
 
+    .cardholder::-webkit-scrollbar-track {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        background-color: transparent;
+    }
+
+    .cardholder::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+    }
+
+    .cardholder::-webkit-scrollbar-thumb {
+        height: 2px;
+        width: 5px;
+        background-color: var(--color-light);
+        border-radius: 10px;
+        border: none;
+    }
+}
    

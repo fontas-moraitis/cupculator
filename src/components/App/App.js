@@ -1,14 +1,13 @@
 import React, { useState, useMemo } from 'react';
+import { SearchContext } from '../../context/SearchContext';
+import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 // Components
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
 import MainContainer from '../MainContainer/MainContainer';
-
 // Style
 import style from './App.module.css';
-import { SearchContext } from '../../context/SearchContext';
-import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 
 function App() {
   const [search, setSearch] = useState("");

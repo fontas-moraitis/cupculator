@@ -1,26 +1,28 @@
 import React from 'react';
+// Style
 import style from './CalculatorInput.module.css';
 
 const CalculatorInput = props => {
     return (
-        <div className={ style.customSelector }>
-            <label className={ style.customInputLabel } htmlFor={ props.label }>
+        <div className={style.customSelector}>
+            <label className={style.customInputLabel} htmlFor={props.label}>
                 { props.label }
             </label>
             <input
-                id={ props.label }
-                placeholder={ props.placeholder }
-                value={props.value}
-                className={ style.customInput }
-                onInput={e => props.setValue(e.target.value) }
+                id={props.label}
+                type="number"
+                placeholder={props.placeholder}
+                value={ props.value || ''}
+                className={style.customInput}
+                onInput={e => {
+                    e.preventDefault()
+                    props.setValue(e.target.value)
+                }}
+                onClick={e => e.target.value = ''}
             />
-            <select className={ style.customSelect } value={props.unitType} onChange={e => props.setType(e.target.value)}>
-                { props.units.map(unit => {
-                    return (
-                        <option key={unit.id} value={unit.id}>{ unit.label }</option>
-                    )
-                })}
-            </select>
+            <div className={style.typeDisplay}>
+                { props.unit }
+            </div>
         </div>
     )
 };

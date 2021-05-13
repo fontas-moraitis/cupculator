@@ -2,13 +2,14 @@
 
 .calculatorContainer {
     width: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
+    padding: var(--spacing-small);
 }
 
 .calculatorContainer__title {
     color: var(--color-main);
+    font-size: var(--font-size-regular);
     font-weight: var(--font-weight-medium);
     margin-bottom: var(--spacing-regular);
 }

@@ -4,11 +4,14 @@
     "name": {
       "en": "Flour"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"125", "us": "142" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 125, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -18,9 +21,12 @@
     },
     "unit": "ml",
     "metrics": {
-      "cup": { "uk":"125", "us": "240" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 126, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -28,11 +34,14 @@
     "name": {
       "en": "Baking powder"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { },
-      "tbsp" : {},
-      "tsp" : { "us": 5 }
+      "cup": { "uk": 127, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12, "us": 5 }
     }
   },
   {
@@ -40,11 +49,14 @@
     "name": {
       "en": "Baking soda"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { },
-      "tbsp" : {},
-      "tsp" : { "us": 6 }
+      "cup": { "uk": 128, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12, "us": 6 }
     }
   },
   {
@@ -52,11 +64,14 @@
     "name": {
       "en": "Sea salt"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { },
-      "tbsp" : {},
-      "tsp" : { "us": 5 }
+      "cup": { "uk": 129, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12, "us": 5 }
     }
   },
   {
@@ -64,11 +79,14 @@
     "name": {
       "en": "Salt kosher"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { },
-      "tbsp" : {},
-      "tsp" : { "us": 3 }
+      "cup": { "uk": 130, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12, "us": 3 }
     }
   },
   {
@@ -76,11 +94,14 @@
     "name": {
       "en": "Almond flour"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": "100" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 131, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -88,11 +109,14 @@
     "name": {
       "en": "Bread flour"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": "150" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 132, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -100,11 +124,14 @@
     "name": {
       "en": "Cake flour"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": "130" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 133, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -112,11 +139,14 @@
     "name": {
       "en": "Oats rolled"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "us": 100 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 134, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -124,11 +154,14 @@
     "name": {
       "en": "Butter"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 226 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 135, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -136,11 +169,14 @@
     "name": {
       "en": "Buttermilk"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 260 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 136, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -148,11 +184,14 @@
     "name": {
       "en": "Heavy cream"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 238 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 137, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -160,11 +199,14 @@
     "name": {
       "en": "Cream cheese"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 212 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 138, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -172,11 +214,14 @@
     "name": {
       "en": "Sour cream"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 220 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 139, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -184,11 +229,14 @@
     "name": {
       "en": "White sugar"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 190 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 140, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -196,11 +244,14 @@
     "name": {
       "en": "Brown sugar"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": 150 },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 141, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -208,11 +259,14 @@
     "name": {
       "en": "Powdered sugar"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": { "uk":"", "us": "130" },
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 142, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -220,11 +274,14 @@
     "name": {
       "en": "Honey"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": {},
-      "tbsp" : {"us": 20},
-      "tsp" : {}
+      "cup": { "uk": 143, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18, "us": 20},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -232,11 +289,14 @@
     "name": {
       "en": "Vegi oil"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": {"us": 210},
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 144, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   },
   {
@@ -244,11 +304,14 @@
     "name": {
       "en": "Vanilla extract"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": {},
-      "tbsp" : {},
-      "tsp" : {"us": 4}
+      "cup": { "uk": 145, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12, "us": 4}
     }
   },
   {
@@ -256,11 +319,14 @@
     "name": {
       "en": "Cocoa powder"
     },
-    "unit": "g",
+    "unit": "grams",
     "metrics": {
-      "cup": {"uk":"", "us": 120},
-      "tbsp" : {},
-      "tsp" : {}
+      "cup": { "uk": 145, "us": 142 },
+      "1/2": {"uk": 60},
+      "1/3": {"uk": 40},
+      "1/4": {"uk": 30},
+      "tbsp" : {"uk": 18},
+      "tsp" : {"uk": 12}
     }
   }
 ]

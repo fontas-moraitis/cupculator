@@ -1,10 +1,13 @@
 import React, {useState, useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
-
+import { useTranslation } from "react-i18next";
+import cross from '../../assets/icons/cross.svg'
+// Style
 import style from './SearchBar.module.css'
 
 const SearchBar = () => {
-	const [placeholder, setPlaceholder] = useState("Search for an igredient");
+	const { t } = useTranslation();
+	const [placeholder, setPlaceholder] = useState(t('searchIngredient'));
 	const { search, setSearch } = useContext(SearchContext);
 
 	return (
@@ -16,15 +19,15 @@ const SearchBar = () => {
 						value={search}
 						onInput={ e => setSearch(e.target.value) }
 						onFocus={ () => setPlaceholder("") }
-						onBlur={ () => setPlaceholder("Search for an igredient") }
+						onBlur={ () => setPlaceholder(t('searchIngredient')) }
 				/>
-				<button onClick={() => setSearch('')}>
+				<button onClick={() => setSearch('')} type="button" name="clear search button">
 					<img
 						width="16"
 						height="32" 
 						className={style.searchBarIcon}
-						src="assets/icons/cross.svg"
-						alt="close icon"
+						src={cross}
+						alt={t('clickToClear')}
 					/>
 				</button>
 			</label>
