@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../netlify/functions/helloWorld.js"],
-  "sourceRoot": "C:/Users/xrysa.000/Documents/cupculator/.netlify/functions-serve",
-  "sourcesContent": ["exports.handler = async function(event, context) {\r\n    return {\r\n        statusCode: 200,\r\n        body: JSON.stringify({message: \"Hello World\"})\r\n    };\r\n}"],
-  "mappings": ";AAAA,QAAQ,UAAU,eAAe,OAAO,SAAS;AAC7C,SAAO;AAAA,IACH,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,CAAC,SAAS;AAAA;AAAA;",
-  "names": []
-}
