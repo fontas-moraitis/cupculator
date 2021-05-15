@@ -22,7 +22,7 @@ exports.handler = async (event, context, callback) => {
 
       return {
         statusCode: 200,
-        body: JSON.stringify(myIngredient)
+        body: JSON.stringify({ result: myIngredient })
       };
     } catch (e) {
       return {
