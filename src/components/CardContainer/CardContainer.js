@@ -12,7 +12,7 @@ const CardHolder = () => {
     const { search } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
-    const fetchIngredient = (id) => axios.get(`/.netlify/functions/getIngredient?ingredient=${id}`); 
+    const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`); 
 
 
 
