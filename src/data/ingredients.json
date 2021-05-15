@@ -4,8 +4,8 @@
     "label": "Flour"
   },
   {
-    "id": "milk",
-    "label": "Milk"
+    "id": "oatMilk",
+    "label": "Oat milk"
   },
   {
     "id": "bakingPowder",
@@ -16,75 +16,27 @@
     "label":"Baking soda"
   },
   {
-    "id": "fineSeaSalt",
-    "label": "Fine sea salt"
-  },
-  {
-    "id": "saltKosher",
-    "label": "Salt kosher"
-  },
-  {
-    "id": "almondFlour",
-    "label": "Almond flour"
-  },
-  {
     "id": "breadFlour",
     "label": "Bread flour"
   },
   {
-    "id": "cakeFlour",
-    "label": "Cake flour"
+    "id": "caneSugar",
+    "label": "Cane sugar"
   },
   {
-    "id": "oatsRolled",
-    "label": "Oats rolled"
+    "id": "coconutSugar",
+    "label": "Coconut sugar"
   },
   {
-    "id": "butter",
-    "label": "Butter"
+    "id": "oliveOil",
+    "label": "Olive oil"
   },
   {
-    "id": "butterMilk",
-    "label": "Butter milk"
+    "id": "sunflowerOil",
+    "label": "Sunflower oil"
   },
   {
-    "id": "heavyCream",
-    "label": "Heavy cream"
-  },
-  {
-    "id": "creamCheese",
-    "label": "Cream cheese"
-  },
-  {
-    "id": "sourCream",
-    "label": "Sour cream"
-  },
-  {
-    "id": "sugar",
-    "label": "Sugar"
-  },
-  {
-    "id": "brownSugar",
-    "label": "Brown sugar"
-  },
-  {
-    "id": "powderedSugar",
-    "label": "Powdered sugar"
-  },
-  {
-    "id": "honey",
-    "label": "Honey"
-  },
-  {
-    "id": "vegetableOil",
-    "label": "Vegi oil"
-  },
-  {
-    "id": "vanillaExtract",
-    "label": "Vanilla extract"
-  },
-  {
-    "id": "cocoaPowder",
-    "label": "Cocoa Powder"
+    "id": "cacaoPowder",
+    "label": "Cacao Powder"
   }
 ]
