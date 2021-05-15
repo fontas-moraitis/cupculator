@@ -20,6 +20,12 @@
     font-size: var(--font-size-regular);
 }
 
+.customInput::-webkit-inner-spin-button, 
+.customInput::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .customInputLabel {
     width: var(--element-width-small);
     margin-right: var(--spacing-small);

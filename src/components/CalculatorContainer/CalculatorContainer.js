@@ -22,7 +22,7 @@ const CalculatorContainer = () => {
     const { t } = useTranslation();
     
     const [unitAmmount, setUnitAmmount] = useState(0);
-    const [cupType, setCupType] = useState('uk');
+    const [cupType, setCupType] = useState('us');
     const [cupAmmount, setCupAmmount] = useState(1);
 
     const { activeIng } = useContext(ActiveIngredientContext);
@@ -35,7 +35,7 @@ const CalculatorContainer = () => {
 
     useEffect(() => {
         // Sets default unit ammount based on selected ingredient
-        setUnitAmmount(activeIng.metrics?.cup.uk)
+        setUnitAmmount(activeIng.metrics?.cup.us)
     }, [activeIng]);
 
     useEffect(() => {
@@ -65,7 +65,7 @@ const CalculatorContainer = () => {
                 setValue={handleCupAmmountChange}
                 type={cupType}
                 setType={setCupType}
-                unit={'uk'}
+                unit={'us'}
             />
         </div>
     )
