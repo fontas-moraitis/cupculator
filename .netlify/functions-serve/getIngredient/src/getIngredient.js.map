@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../netlify/functions/getIngredient.js"],
+  "sourceRoot": "C:/Users/xrysa.000/Documents/cupculator/.netlify/functions-serve",
+  "sourcesContent": ["const fs = require(\"fs\").promises;\r\nconst path = require(\"path\");\r\n\r\nexports.handler = async (event, context, callback) => {\r\n    const querystring = event.queryStringParameters;\r\n    const activeIngredient = querystring.ingredient || 'allPurposeFlour';\r\n\r\n    try {\r\n      const content = await fs.readFile(path.join(__dirname, \"data.json\"), {encoding: \"utf-8\"});\r\n      const parsed = JSON.parse(content);\r\n\r\n      const searchId = (x, id) => {\r\n        for(var i = 0; i < x.length; i++) {\r\n            if (x[i]['id']==id){\r\n                return x[i];\r\n            }\r\n        }\r\n        return -1;\r\n    }\r\n    \r\n   const myIngredient = searchId(parsed, activeIngredient);\r\n\r\n      return {\r\n        statusCode: 200,\r\n        body: JSON.stringify(myIngredient)\r\n      };\r\n    } catch (e) {\r\n      return {\r\n        statusCode: 500,\r\n        body: e\r\n      };\r\n    }\r\n  };"],
+  "mappings": ";AAAA,IAAM,KAAK,QAAQ,MAAM;AACzB,IAAM,OAAO,QAAQ;AAErB,QAAQ,UAAU,OAAO,OAAO,SAAS,aAAa;AAClD,QAAM,cAAc,MAAM;AAC1B,QAAM,mBAAmB,YAAY,cAAc;AAEnD,MAAI;AACF,UAAM,UAAU,MAAM,GAAG,SAAS,KAAK,KAAK,WAAW,cAAc,CAAC,UAAU;AAChF,UAAM,SAAS,KAAK,MAAM;AAE1B,UAAM,WAAW,CAAC,GAAG,OAAO;AAC1B,eAAQ,IAAI,GAAG,IAAI,EAAE,QAAQ,KAAK;AAC9B,YAAI,EAAE,GAAG,SAAO,IAAG;AACf,iBAAO,EAAE;AAAA;AAAA;AAGjB,aAAO;AAAA;AAGZ,UAAM,eAAe,SAAS,QAAQ;AAEnC,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU;AAAA;AAAA,WAEhB,GAAP;AACA,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM;AAAA;AAAA;AAAA;",
+  "names": []
+}
