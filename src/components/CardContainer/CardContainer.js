@@ -14,11 +14,12 @@ const CardHolder = () => {
 
     const fetchIngredient = (id) => axios.get(`/.netlify/functions/getIngredient?ingredient=${id}`); 
 
+    const fetchData = async x => {
+        const response = await fetchIngredient(x || 'allPurposeFlour')
+        setActiveIng(response.data)
+    }
+
     const handleCardSelection = (card, event) => {
-        const fetchData = async x => {
-            const response = await fetchIngredient(x || 'bakingSoda')
-            setActiveIng(response.data)
-        }
         fetchData(card.id);
     };
 
@@ -27,10 +28,6 @@ const CardHolder = () => {
         const normalizedSearch = search.toLowerCase();
         const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id
         const getIngTimeout = setTimeout(() => {
-            const fetchData = async x => {
-                const response = await fetchIngredient(x || 'allPurposeFlour')
-                setActiveIng(response.data)
-            }
             fetchData(searchedIngredient);
         }, 1000)
         return () => clearTimeout(getIngTimeout);
