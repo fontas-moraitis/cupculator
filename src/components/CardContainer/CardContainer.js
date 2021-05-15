@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import {SearchContext} from '../../context/SearchContext';
+import axios from 'axios';
 import {ActiveIngredientContext} from '../../context/ActiveIngredientContext';
 import ingredients from '../../data/ingredients.json';
 // Components
@@ -11,20 +12,28 @@ const CardHolder = () => {
     const { search } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
+    const fetchIngredient = (id) => axios.get(`/.netlify/functions/getIngredient?ingredient=${id}`); 
+
     const handleCardSelection = (card, event) => {
-        setActiveIng(ingredients.find(ingredient => ingredient.id === card.id));
+        const fetchData = async x => {
+            const response = await fetchIngredient(x || 'bakingSoda')
+            setActiveIng(response.data)
+        }
+        fetchData(card.id);
     };
 
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
         const normalizedSearch = search.toLowerCase();
-        const searchTimeoutId = setTimeout(() => {
-            search && ingredients.some(ingredient => ingredient.name.en.toLowerCase().includes(normalizedSearch))
-            ? setActiveIng(ingredients.find(ingredient => ingredient.name.en.toLowerCase().includes(normalizedSearch)))
-            : setActiveIng(ingredients.find(ingredient => ingredient.name.en.toLowerCase().includes('flour')))
-        }, 500);
-
-        return () => clearTimeout(searchTimeoutId);
+        const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id
+        const getIngTimeout = setTimeout(() => {
+            const fetchData = async x => {
+                const response = await fetchIngredient(x || 'allPurposeFlour')
+                setActiveIng(response.data)
+            }
+            fetchData(searchedIngredient);
+        }, 1000)
+        return () => clearTimeout(getIngTimeout);
     }, [search, setActiveIng])
 
     return (

@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 // Components
-import CustomTable from '../CustomTable/CustomTable'
+import SpinLoader from '../SpinLoader/SpinLoader';
+import CustomTable from '../CustomTable/CustomTable';
 // Style
 import style from './ConversionsContainer.module.css';
 
@@ -19,7 +20,7 @@ const ConversionsContainer = () => {
     // Populate body of table
     let tbodyData = []
 
-    if (activeIng) {
+    if (activeIng.metrics) {
         for (const [key, value] of Object.entries(activeIng.metrics)) {
             tbodyData = [...tbodyData, { id: key, items: [key === 'cup' ? '1' : key, value.uk || '-', value.us || '-'] }];
           }
@@ -30,7 +31,12 @@ const ConversionsContainer = () => {
             <h2 className={style.conversionsContainer__title}>
                 {t('conversionsTable')}
             </h2>
-            <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
+            { 
+                !activeIng.metrics
+                    ? <SpinLoader/>
+                    : <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
+            }
+            
         </div>
     )
 };

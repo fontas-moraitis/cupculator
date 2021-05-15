@@ -24,11 +24,11 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
              width="55"
              height="55"
              src={`${process.env.PUBLIC_URL}/assets/icons/ingredients/${ingredient.id}.svg`}
-             alt={`${ingredient.name.en}-icon` /* en to be replaced by locale */}
+             alt={`${ingredient.label}-icon` /* en to be replaced by locale */}
              className={style.ingredientCardIcon}
             />
             <span className={style.ingredientCardLabel}>
-                {ingredient.name.en/* en to be replaced by locale */}
+                {ingredient.label/* en to be replaced by locale */}
             </span>
         </div>
     )
