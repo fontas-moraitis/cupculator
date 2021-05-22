@@ -25,12 +25,16 @@ const CardHolder = () => {
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
         const normalizedSearch = search.toLowerCase();
+
         const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id
 
         const getIngTimeout = setTimeout(() => {
-            handleCardSelection({id: searchedIngredient})
+            const fetchData = async x => {
+                const response = await fetchIngredient(x || 'allPurposeFlour')
+                setActiveIng(response.data)
+            }
+            fetchData(searchedIngredient);
         }, 1000)
-
         return () => clearTimeout(getIngTimeout);
     }, [search, setActiveIng])
 
