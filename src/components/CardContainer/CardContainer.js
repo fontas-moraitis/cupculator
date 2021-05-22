@@ -12,29 +12,25 @@ const CardHolder = () => {
     const { search } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
-    const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`); 
-
-
+    const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
 
     const handleCardSelection = (card, event) => {
-        const fetchData = async x => {
-            const response = await fetchIngredient(x || 'allPurposeFlour')
-            setActiveIng(response.data)
-        }
-        fetchData(card.id);
+      const fetchData = async x => {
+        const response = await fetchIngredient(x || 'allPurposeFlour')
+        setActiveIng(response.data)
+      }
+      fetchData(card.id);
     };
 
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
         const normalizedSearch = search.toLowerCase();
         const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id
+
         const getIngTimeout = setTimeout(() => {
-            const fetchData = async x => {
-                const response = await fetchIngredient(x || 'allPurposeFlour')
-                setActiveIng(response.data)
-            }
-            fetchData(searchedIngredient);
+            handleCardSelection({id: searchedIngredient})
         }, 1000)
+
         return () => clearTimeout(getIngTimeout);
     }, [search, setActiveIng])
 

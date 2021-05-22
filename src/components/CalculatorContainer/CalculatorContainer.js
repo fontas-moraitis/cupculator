@@ -47,7 +47,7 @@ const CalculatorContainer = () => {
     }, [unitAmmount, cupType, activeIng])
 
     return (
-        <div className={style.calculatorContainer}>
+        <section className={style.calculatorContainer}>
             <h2 className={style.calculatorContainer__title}>
             { t('calculator') }
             </h2>
@@ -67,7 +67,7 @@ const CalculatorContainer = () => {
                 setType={setCupType}
                 unit={'us'}
             />
-        </div>
+        </section>
     )
 };
 

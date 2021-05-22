@@ -5,5 +5,16 @@
     "searchIngredient": "Αναζήτησε υλικό",
     "clickToClear": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
     "unit": "Μονάδα μέτρησης",
-    "cups": "Κούπες"
+    "cups": "Κούπες",
+    "cup": "Κούπα",
+    "allPurposeFlour": "Αλέυρι",
+    "oatMilk": "Γαλά βρώμης",
+    "bakingPowder": "Μπέικιν παουντερ",
+    "bakingSoda": "Μαγειρική σόδα",
+    "breadFlour": "Σκληρό αλέυρι",
+    "caneSugar": "Ακατέργαστη ζάχαρη",
+    "coconutSugar": "Ζάχαρη καρύδας",
+    "oliveOil": "Ελεόλαδο",
+    "sunflowerOil": "Ηλιέλαιο",
+    "cacaoPowder": "Σκόνη κακάο"
 }

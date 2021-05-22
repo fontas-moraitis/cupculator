@@ -6,6 +6,7 @@ import SpinLoader from '../SpinLoader/SpinLoader';
 import CustomTable from '../CustomTable/CustomTable';
 // Style
 import style from './ConversionsContainer.module.css';
+// const CustomTable = React.lazy(() => import('../CustomTable/CustomTable'));
 
 const ConversionsContainer = () => {
     const { t } = useTranslation();
@@ -13,7 +14,7 @@ const ConversionsContainer = () => {
 
     // Populate header of table
     const theadData = [
-        { id: "cup", label: 'Cup' },
+        { id: "cup", label: t('cup') },
         { id: 'uk', label: "Uk" },
         { id: 'us', label: "Us" }
     ];
@@ -36,7 +37,9 @@ const ConversionsContainer = () => {
                     ? <SpinLoader/>
                     : <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
             }
-            
+            		{/* <Suspense fallback={<SpinLoader />}>
+                  { activeIng.metrics && <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />}
+                </Suspense> */}
         </div>
     )
 };

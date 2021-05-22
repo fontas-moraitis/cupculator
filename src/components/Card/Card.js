@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from "react-i18next";
 // Style
 import style from './Card.module.css';
 
 const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) => {
+    const { t } = useTranslation();
     // Dynamic class assigmnent for default or selected card
     const className = ingredient.id === activeIngredient
      ? style.activeIngredientCard  
@@ -28,7 +30,7 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
              className={style.ingredientCardIcon}
             />
             <span className={style.ingredientCardLabel}>
-                {ingredient.label/* en to be replaced by locale */}
+                {t(ingredient.id)/* en to be replaced by locale */}
             </span>
         </div>
     )

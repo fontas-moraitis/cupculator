@@ -5,5 +5,16 @@
     "searchIngredient": "Search for an igredient",
     "clickToClear": "Click to clear",
     "unit": "Unit",
-    "cups": "Cups"
+    "cups": "Cups",
+    "cup": "Cup",
+    "allPurposeFlour": "Flour",
+    "oatMilk": "Oat milk",
+    "bakingPowder": "Baking powder",
+    "bakingSoda": "Baking soda",
+    "breadFlour": "Bread flour",
+    "caneSugar": "Cane sugar",
+    "coconutSugar": "Coconut sugar",
+    "oliveOil": "Olive oil",
+    "sunflowerOil": "Sunflower oil",
+    "cacaoPowder": "Cacao powder"
 }
