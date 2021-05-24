@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import {SearchContext} from '../../context/SearchContext';
 import axios from 'axios';
 import {ActiveIngredientContext} from '../../context/ActiveIngredientContext';
@@ -12,31 +12,34 @@ const CardHolder = () => {
     const { search } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
-    const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
+    // const fetchData = async x => {
+    //   const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
+    //   const response = await fetchIngredient(x || 'allPurposeFlour');
+    //   setActiveIng(response.data);
+    // }
 
-    const handleCardSelection = (card, event) => {
-      const fetchData = async x => {
-        const response = await fetchIngredient(x || 'allPurposeFlour')
-        setActiveIng(response.data)
-      }
-      fetchData(card.id);
-    };
+    const fetchData = useCallback(
+      async x => {
+        const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
+        const response = await fetchIngredient(x || 'allPurposeFlour');
+        setActiveIng(response.data);
+      },
+      [setActiveIng],
+    );
+
+    const handleCardSelection = (card, event) => fetchData(card.id)
 
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
         const normalizedSearch = search.toLowerCase();
-
-        const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id
-
+        const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id;
+        
         const getIngTimeout = setTimeout(() => {
-            const fetchData = async x => {
-                const response = await fetchIngredient(x || 'allPurposeFlour')
-                setActiveIng(response.data)
-            }
             fetchData(searchedIngredient);
-        }, 1000)
+        }, 1000);
+
         return () => clearTimeout(getIngTimeout);
-    }, [search, setActiveIng])
+    }, [search, setActiveIng, fetchData])
 
     return (
         <div className={style.cardholder}>
