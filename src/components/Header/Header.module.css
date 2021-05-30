@@ -9,14 +9,14 @@
 
 .header_container_logo {
     display: flex;
-    font-family: 'Montserrat', 'Arial', sans-serif;
-    font-size: var(--font-size-large);
-    font-weight: var(--font-size-medium);
-    color: var(--color-light);
+    flex-direction: column;
+    font-size: var(--font-size-small);
+    color: var(--color-font-light);
 }
 
 .header_container_logo__title {
-    display: flex;
-    align-items: center;
-    margin-left: var(--spacing-small);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xsmall);
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: var(--color-font-main);
 }

@@ -48,16 +48,14 @@ const CalculatorContainer = () => {
 
     return (
         <section className={style.calculatorContainer}>
-            <h2 className={style.calculatorContainer__title}>
-            { t('calculator') }
-            </h2>
             <CalculatorInput
-                label={t('unit')}
+                label={t('grams')}
                 placeholder="enter quantity"
                 value={unitAmmount}
                 setValue={setUnitAmmount}
                 unit={activeIng.unit}
             />
+            <span>{ t('to')}</span>
             <CalculatorInput
                 label={t('cups')}
                 placeholder="enter quantity"

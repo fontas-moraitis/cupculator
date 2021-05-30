@@ -2,22 +2,20 @@
 
 .customSelector {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--spacing-regular);
 }
 
 .customInput {
-    width: var(--element-width);
-    height: var(--element-height);
-    border: 1px solid var(--color-grey);
-    border-radius: var(--border-radius-large);
-    appearance: none;
-    outline: none;
-    text-align: center;
-    padding: var(--spacing-xsmall);
-    margin: var(--spacing-regular) 0;
-    font-size: var(--font-size-regular);
+  width: 100%;
+  height: 100%;
+  border: none;
+  appearance: none;
+  outline: none;
+  text-align: center;
+  background: transparent;
+  font-size: var(--font-size-regular);
 }
 
 .customInput::-webkit-inner-spin-button, 
@@ -27,15 +25,13 @@
 }
 
 .customInputLabel {
-    width: var(--element-width-small);
-    margin-right: var(--spacing-small);
-    color: var(--color-main);
-    font-weight: var(--font-weight-bold);
+    color: var(--color-dark-grey);
+    font-size: var(--font-size-xsmall);
     text-align: center;
+    margin-top: var(--spacing-xxsmall);
 }
 
 .typeDisplay {
-    width: var(--element-width-small);
     display: flex;
     justify-self: center;
     align-items: center; 

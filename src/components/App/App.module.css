@@ -5,6 +5,7 @@
   min-height: 100vh;
   padding: var(--spacing-regular);
   max-width: var(--max-width);
+  color: var(--color-font-main)
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,23 +1,25 @@
 import React from 'react';
-import style from './Header.module.css';
 import { useTranslation } from "react-i18next";
-import logo from '../../assets/icons/logo.svg';
+// Style
+import style from './Header.module.css';
+// Image
+import logo from '../../assets/icons/logo-new.svg';
 
 const Header = () => {
     const { t } = useTranslation();
 
     return (
-        <div className={style.header_container}>
+        <header className={style.header_container}>
             <div className={style.header_container_logo}>
-                <img width="32" height="32" src={logo} alt="" role="presentation"/>
-                <div className={style.header_container_logo__title}>
-                    cupculator
-                </div>
+                <h1 className={style.header_container_logo__title}>
+                    Cupculator
+                </h1>
+                <span>{ t('cookingConversions') }</span>
             </div>
             <div>
-                { t('cookingConversions') }
+             <img width="115" height="45" src={logo} alt="" role="presentation"/>
             </div>
-        </div>
+        </header>
     )
 };
 

@@ -12,12 +12,6 @@ const CardHolder = () => {
     const { search } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
-    // const fetchData = async x => {
-    //   const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
-    //   const response = await fetchIngredient(x || 'allPurposeFlour');
-    //   setActiveIng(response.data);
-    // }
-
     const fetchData = useCallback(
       async x => {
         const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);

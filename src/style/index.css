@@ -32,7 +32,6 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	box-sizing: border-box;
 	font-family: 'Lexend', 'Arial', sans-serif;
-	color: var(--color-fonts);
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
