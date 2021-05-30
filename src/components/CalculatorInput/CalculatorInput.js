@@ -24,5 +24,3 @@ const CalculatorInput = props => {
         </div>
     )
 };
-
-export default CalculatorInput;
