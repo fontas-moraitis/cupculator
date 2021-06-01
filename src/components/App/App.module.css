@@ -3,13 +3,22 @@
 .app {
   width: 100vw;
   height: 100vh;
-  padding: var(--spacing-regular);
   max-width: var(--max-width);
+  padding: var(--spacing-regular) var(--spacing-small);
   color: var(--color-font-main);
 }
 
-.decorationBlob {
+.blobContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.decorationBlob {
   position: absolute;
   fill: var(--color-secondary);
   top: 0;

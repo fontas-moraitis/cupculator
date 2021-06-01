@@ -46,7 +46,8 @@
     /* colors */
     --color-grey: rgb(200, 200, 200);
     --color-font-main: #e06551;
-    --background-color-main: linear-gradient(180deg, rgba(107,96,246, 1) 50%, rgba(246,199,168, 1) 100%);
+    /* --background-color-main: linear-gradient(180deg, rgba(107,96,246, 1) 50%, rgba(246,199,168, 1) 100%); */
+    --background-color-main: #fce4ef;
     --background-color-transparent: rgba(250, 250, 250, 1);
   }
 }
