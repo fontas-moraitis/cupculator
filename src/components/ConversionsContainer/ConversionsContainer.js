@@ -14,16 +14,34 @@ const ConversionsContainer = () => {
 
     // Populate header of table
     const theadData = [
-        { id: "cup", label: t('cup') },
-        { id: 'uk', label: "Uk" },
-        { id: 'us', label: "Us" }
+        // { id: "cup", label: t('cup') },
+        // { id: 'uk', label: "Uk" },
+        // { id: 'us', label: "Us" }
     ];
     // Populate body of table
     let tbodyData = []
 
     if (activeIng.metrics) {
         for (const [key, value] of Object.entries(activeIng.metrics)) {
-            tbodyData = [...tbodyData, { id: key, items: [key === 'cup' ? '1' : key, value.uk || '-', value.us || '-'] }];
+          const populateTable = (key, value) => {
+            switch(key) {
+              case 'cup':
+                return { id: key, size: '250ml', icon: '/assets/cup-sizes/Cup1.svg', key: '1 cup', value: value.us || '-'}
+              case '1/2':
+                return { id: key, size: '125ml', icon: '/assets/cup-sizes/Cup2.svg', key: '1/2 cup', value: value.us || '-'}
+              case '1/3':
+                return { id: key, size: '80ml', icon: '/assets/cup-sizes/Cup3.svg', key: '1/3 cup', value: value.us || '-'}
+              case '1/4':
+                return { id: key, size: '60ml', icon: '/assets/cup-sizes/Cup4.svg', key: '1/4 cup', value: value.us || '-'}
+              case 'tbsp':
+                return { id: key, size: '15ml', icon: '/assets/cup-sizes/Cup5.svg', key: '1 tbsp', value: value.us || '-'}
+              default:
+                return { id: key, size: '5ml', icon: '/assets/cup-sizes/Cup5.svg', key: '1 tsp', value: value.us || '-'}
+            }
+          }
+
+            // tbodyData = [...tbodyData, { id: key, items: [key === 'cup' ? '1 cup' : key, value.us || '-'] }];
+            tbodyData = [...tbodyData, populateTable(key, value)];
           }
     }
 

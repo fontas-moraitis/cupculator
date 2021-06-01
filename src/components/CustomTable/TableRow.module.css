@@ -1,0 +1,5 @@
+@import '../../style/_variables.css';
+
+.tableValue {
+  background-color: var(--color-white);
+}

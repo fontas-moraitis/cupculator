@@ -13,7 +13,7 @@ const CustomTable = ({ theadData, tbodyData, customClass }) => {
             </thead>
             <tbody>
                 {tbodyData.map((item) => {
-                    return <TableRow key={item.id} data={item.items} />;
+                    return <TableRow key={item.id} data={item} />;
                 })}
             </tbody>
         </table>

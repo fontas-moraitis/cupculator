@@ -11,7 +11,7 @@ const CalculatorInput = props => {
                 placeholder={props.placeholder}
                 value={ props.value || ''}
                 className={style.customInput}
-                autocomplete="off"
+                autoComplete="off"
                 onInput={e => {
                     e.preventDefault()
                     props.setValue(e.target.value)
@@ -24,3 +24,5 @@ const CalculatorInput = props => {
         </div>
     )
 };
+
+export default CalculatorInput;

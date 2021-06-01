@@ -22,13 +22,15 @@ const SearchBar = () => {
 						onBlur={ () => setPlaceholder(t('searchIngredient')) }
 				/>
 				<button onClick={() => setSearch('')} type="button" name="clear search button">
-					<img
-						width="16"
-						height="32" 
-						className={style.searchBarIcon}
-						src={cross}
-						alt={t('clickToClear')}
-					/>
+          { search &&
+              <img
+              width="16"
+              height="32" 
+              className={style.searchBarIcon}
+              src={cross}
+              alt={t('clickToClear')}
+            />
+        }
 				</button>
 			</label>
 		</div>
