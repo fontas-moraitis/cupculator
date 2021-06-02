@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 // Style
 import style from './CalculatorInput.module.css';
 
