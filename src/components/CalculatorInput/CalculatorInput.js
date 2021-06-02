@@ -6,10 +6,12 @@ const CalculatorInput = props => {
   const inputElement = useRef(null);
 
 useEffect(() => {
-  inputElement.current.onfocus = () => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-  };
+  setTimeout(() => {
+    inputElement.current.onfocus = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+    };
+  })
 });
 
     return (
