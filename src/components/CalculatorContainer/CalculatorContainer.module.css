@@ -9,5 +9,11 @@
     border-radius: 28px;
     padding: var(--spacing-small);
     background-color: var(--color-white);
-    box-shadow: 3px 3px 0 black;
+    box-shadow: 3px 3px 0 var(--color-dark);
+}
+
+.calculatorContainer__separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -3,7 +3,7 @@
     "calculator": "Υπολογιστής",
     "conversionsTable": "Πίνακας μετατροπών",
     "searchIngredient": "Αναζήτησε υλικό",
-    "clickToClear": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
+    "clearSearch": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
     "unit": "Μονάδα μέτρησης",
     "cups": "Κούπες",
     "cup": "Κούπα",
@@ -18,5 +18,6 @@
     "oliveOil": "Ελαιόλαδο",
     "sunflowerOil": "Ηλιέλαιο",
     "cacaoPowder": "Σκόνη κακάο",
-    "to": "σε"
+    "to": "σε",
+    "ingredientCard": "κάρτα υλικού"
 }

@@ -19,14 +19,15 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
 
     return (
       <Suspense fallback={<SpinLoader />}>
-        <div
+        <button
+         aria-label={t('ingredientCard')}
          className={className}
          ref={ingredient.id === activeIngredient ? activeCardRef : null}
          onClick={e => handleCardSelection(ingredient, e)}
          >
             <img
-             width="38"
-             height="38"
+             width="34"
+             height="34"
              src={`${process.env.PUBLIC_URL}/assets/icons/ingredients/${ingredient.id}.svg`}
              alt={`${ingredient.label}-icon` /* en to be replaced by locale */}
              className={style.ingredientCardIcon}
@@ -34,7 +35,7 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
             <span className={style.ingredientCardLabel}>
                 {t(ingredient.id)/* en to be replaced by locale */}
             </span>
-        </div>
+        </button>
       </Suspense>
     )
 };

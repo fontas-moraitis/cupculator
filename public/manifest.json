@@ -30,16 +30,17 @@
   ],
   "start_url": ".",
   "display": "standalone",
+  "prefer_related_applications": false,
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "shortcuts": [
     {
-      "name": "Case Studies",
-      "short_name": "Case Studies",
-      "url": "/case-studies",
+      "name": "cupculator",
+      "short_name": "cupculator",
+      "url": "/",
       "icons": [
         {
-          "src": "/android-chrome-192x192.png",
+          "src": "logo192.png",
           "sizes": "192x192",
           "type": "image/png"
         }

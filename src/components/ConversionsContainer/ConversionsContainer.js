@@ -13,13 +13,9 @@ const ConversionsContainer = () => {
     const { activeIng } = useContext(ActiveIngredientContext);
 
     // Populate header of table
-    const theadData = [
-        // { id: "cup", label: t('cup') },
-        // { id: 'uk', label: "Uk" },
-        // { id: 'us', label: "Us" }
-    ];
+    const theadData = [];
     // Populate body of table
-    let tbodyData = []
+    let tbodyData = [];
 
     if (activeIng.metrics) {
         for (const [key, value] of Object.entries(activeIng.metrics)) {
@@ -39,25 +35,23 @@ const ConversionsContainer = () => {
                 return { id: key, size: '5ml', icon: '/assets/cup-sizes/Cup5.svg', key: '1 tsp', value: value.us || '-'}
             }
           }
-
-            // tbodyData = [...tbodyData, { id: key, items: [key === 'cup' ? '1 cup' : key, value.us || '-'] }];
             tbodyData = [...tbodyData, populateTable(key, value)];
           }
     }
 
     return (
         <div className={style.conversionsContainer}>
-            <h2 className={style.conversionsContainer__title}>
+          <div className={style.titleContainer}>
+            <h2 className={style.titleContainer__title}>
                 {t('conversionsTable')}
             </h2>
-            { 
-                !activeIng.metrics
-                    ? <SpinLoader/>
-                    : <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
-            }
-            		{/* <Suspense fallback={<SpinLoader />}>
-                  { activeIng.metrics && <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />}
-                </Suspense> */}
+            <div className={style.titleContainer__ingredient}>{t(activeIng.id)}</div>
+          </div>
+          { 
+            !activeIng.metrics
+                ? <SpinLoader/>
+                : <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
+          }
         </div>
     )
 };

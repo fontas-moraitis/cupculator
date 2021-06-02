@@ -2,19 +2,21 @@
   /* colors */
     --color-white: #fff;
     --color-light: #fafafa;
-    --color-dark: #0a0a0a;
+    --color-grey: #c3c3c3;
     --color-dark-grey: #2F2C33;
+    --color-dark: #0a0a0a;
+
     --color-main: #e06551;
     --color-secondary: #d8d7ec;
-    --color-grey: #c3c3c3;
-    --color-font-light: #7c7c7c;
-    --color-font-main: #e06551;
     --color-highlight: #6ddf8d;
     --background-color-main: #fce4ef;
-    --background-color-transparent: rgba(250, 250, 250, 0.8);
+   
+    --color-font-light: #7c7c7c;
+    --color-font-main: #e06551;
   
     /* spacing */
     --max-width: 768px;
+
     --spacing-xxsmall: 4px;
     --spacing-xsmall: 6px;
     --spacing-small: 10px;
@@ -28,26 +30,24 @@
     --font-weight-bold: 700;
 
     /* font-sizes */
-    --font-size-xsmall: 0.6rem;
-    --font-size-small: 0.9rem;
-    --font-size-regular: 1rem;
-    --font-size-large: 1.5rem;
+    --font-size-xsmall: 12px;
+    --font-size-small: 13px;
+    --font-size-regular: 14px;
+    --font-size-large: 24px;
 
     /* sizes */
     --border-radius-small: 6px;
     --border-radius-large: 20px;
-    --element-height: 25px;
+
+    --button-min-height: 48px;
+    --button-min-width: 48px;
+
+    --card-width: 68px;
+    --card-height: 88px;
     --element-width: 140px;
     --element-width-small: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* colors */
-    --color-grey: rgb(200, 200, 200);
-    --color-font-main: #e06551;
-    /* --background-color-main: linear-gradient(180deg, rgba(107,96,246, 1) 50%, rgba(246,199,168, 1) 100%); */
-    --background-color-main: #fce4ef;
-    --background-color-transparent: rgba(250, 250, 250, 1);
-  }
+  :root {}
 }

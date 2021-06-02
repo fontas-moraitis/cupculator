@@ -21,14 +21,18 @@ const SearchBar = () => {
 						onFocus={ () => setPlaceholder("") }
 						onBlur={ () => setPlaceholder(t('searchIngredient')) }
 				/>
-				<button onClick={() => setSearch('')} type="button" name="clear search button">
+				<button
+         aria-label={t('clearSearch')}
+         className={style.searchBarButton}
+         title={t('clearSearch')}
+         onClick={() => setSearch('')}
+         type="button" >
           { search &&
               <img
               width="16"
               height="32" 
-              className={style.searchBarIcon}
               src={cross}
-              alt={t('clickToClear')}
+              alt={t('clearSearch')}
             />
         }
 				</button>

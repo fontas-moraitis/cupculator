@@ -55,7 +55,7 @@ const CalculatorContainer = () => {
                 setValue={setUnitAmmount}
                 unit={activeIng.unit}
             />
-            <span>{ t('to')}</span>
+            <div className={style.calculatorContainer__separator}>{ t('to')}</div>
             <CalculatorInput
                 label={t('cups')}
                 placeholder="enter quantity"

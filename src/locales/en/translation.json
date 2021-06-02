@@ -3,7 +3,7 @@
     "calculator": "Calculator",
     "conversionsTable": "Conversions Table",
     "searchIngredient": "Search for an ingredient",
-    "clickToClear": "Click to clear",
+    "clearSearch": "Click to clear",
     "unit": "Unit",
     "cups": "cups",
     "cup": "Cup",
@@ -18,5 +18,6 @@
     "oliveOil": "Olive oil",
     "sunflowerOil": "Sunflower oil",
     "cacaoPowder": "Cacao powder",
-    "to": "to"
+    "to": "to",
+    "ingredientCard": "Ingredient card"
 }

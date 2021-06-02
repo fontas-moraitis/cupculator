@@ -5,30 +5,40 @@
     display: flex;
     flex-direction: column;
     padding: var(--spacing-small);
+    margin-top: 10%;
 }
 
-.conversionsContainer__title {
-    margin-bottom: var(--spacing-regular);
-    color: var(--color-main);
-    font-size: var(--font-size-regular);
-    font-weight: var(--font-weight-medium);
+.titleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-regular);
 }
 
+.titleContainer__ingredient {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-xsmall)
+}
 
 /* Custom styling for table */
 .conversionsTable {
-    border-collapse: initial;
+    border-collapse: collapse;
     border-spacing: var(--spacing-small);
+    font-size: var(--font-size-small);
 }
 
 .conversionsTable thead tr td {
     color: var(--color-dark);
     font-weight: var(--font-weight-medium);
-    margin: var(--spacing-xsmall);
 }
 
 .conversionsTable tbody tr td {
     color: var(--color-dark-grey);
     font-weight: var(--font-weight-thin);
-    margin: var(--spacing-xsmall);
+    margin: var(--spacing-xxsmall) 0;
+    border-bottom: 1px solid white;
 }

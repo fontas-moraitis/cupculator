@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   max-width: var(--max-width);
-  padding: var(--spacing-regular) var(--spacing-small);
+  padding: var(--spacing-large) var(--spacing-regular);
   color: var(--color-font-main);
 }
 
