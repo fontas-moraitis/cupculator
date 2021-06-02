@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // Style
 import style from './CalculatorInput.module.css';
 
 const CalculatorInput = props => {
+  const inputElement = useRef(null);
+
+useEffect(() => {
+  inputElement.current.onfocus = () => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+  };
+});
+
     return (
         <div className={style.customSelector}>
             <input
                 id={props.label}
+                ref={inputElement}
                 type="number"
                 placeholder={props.placeholder}
                 value={ props.value || ''}
