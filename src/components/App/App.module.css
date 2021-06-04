@@ -6,6 +6,10 @@
   max-width: var(--max-width);
   padding: var(--spacing-large) var(--spacing-regular);
   color: var(--color-font-main);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blobContainer {
