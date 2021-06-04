@@ -5,4 +5,7 @@
     padding: var(--spacing-small);
     margin-top: var(--spacing-large);
     border-radius: var(--border-radius-small);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
