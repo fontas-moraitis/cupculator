@@ -32,6 +32,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .decorationBlob {
-    animation: blobDance 20s ease-in-out infinite;
+    animation: blobDance 20s ease-in-out 10s;
   }
 }

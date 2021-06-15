@@ -49,5 +49,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {}
+  :root {
+    --color-main: #ff7769;
+    --color-font-main: #ff7769;
+    --background-color-main: #423491;
+    --color-secondary: #b8b3f4;
+  }
 }
