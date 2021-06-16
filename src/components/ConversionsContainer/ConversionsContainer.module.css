@@ -37,7 +37,6 @@
 }
 
 .conversionsTable tbody tr td {
-    color: var(--color-dark-grey);
     font-weight: var(--font-weight-thin);
     margin: var(--spacing-xxsmall) 0;
     border-bottom: 1px solid white;
