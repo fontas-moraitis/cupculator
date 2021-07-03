@@ -1,16 +1,12 @@
 @import "../../style/_variables.css";
 
 .app {
-  /* width: 100vw; */
-  height: 100vh;
   max-width: var(--max-width);
-  padding: var(--spacing-xlarge) var(--spacing-regular);
+  padding: var(--spacing-xlarge) var(--spacing-regular) 0 var(--spacing-regular);
   color: var(--color-font-main);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
-  background: var(--background-color-main);
-  overflow: hidden;
+  background-color: transparent;
 }

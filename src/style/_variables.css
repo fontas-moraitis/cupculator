@@ -10,7 +10,7 @@
     --color-secondary: #d8d7ec;
     --color-highlight: #6ddf8d;
     /* --background-color-main: #fce4ef; */
-    --background-color-main: linear-gradient(to top, #ee9ca7, #ffdde1);
+    --background-color-main: linear-gradient(to bottom, #ee9ca7, #ffdde1);
    
     --color-font-light: #7c7c7c;
     --color-font-main: #e06551;
