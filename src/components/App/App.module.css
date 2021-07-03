@@ -1,12 +1,16 @@
 @import "../../style/_variables.css";
 
 .app {
-  max-width: var(--max-width);
-  padding: var(--spacing-xlarge) var(--spacing-regular) 0 var(--spacing-regular);
+  min-height: 100vh;
   color: var(--color-font-main);
+  background: var(--background-color-main);
+}
+
+.app__container {
+  max-width: var(--max-width);
   margin: 0 auto;
+  padding: var(--spacing-xlarge) var(--spacing-regular) 0 var(--spacing-regular);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
 }

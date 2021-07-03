@@ -42,15 +42,17 @@ function App() {
 
   return (
     <div className={style.app}>
-      <ActiveIngredientContext.Provider value={activeIngValue}>
-        <SearchContext.Provider value={value}>
-          <Header />
-          <SearchBar />
-          <CardContainer />
-          <MainContainer />
-          <Footer/>
-        </SearchContext.Provider>
-      </ActiveIngredientContext.Provider>
+      <section className={style.app__container}>
+        <ActiveIngredientContext.Provider value={activeIngValue}>
+          <SearchContext.Provider value={value}>
+            <Header />
+            <SearchBar />
+            <CardContainer />
+            <MainContainer />
+            <Footer/>
+          </SearchContext.Provider>
+        </ActiveIngredientContext.Provider>
+      </section>
     </div>
   );
 }
