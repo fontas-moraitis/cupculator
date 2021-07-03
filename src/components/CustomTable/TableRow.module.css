@@ -11,6 +11,16 @@
   padding: var(--spacing-xsmall);
   background-color: var(--color-white);
   border-radius: var(--border-radius-small);
-  height: 24px;
+  height: var(--spacing-large);
   margin: var(--spacing-xxsmall) 0;
+}
+
+.tableIcon {
+  height: 100%;
+  width: var(--spacing-regular);
+  align-items: center;
+}
+
+.tableIcon img {
+  margin-right: var(--spacing-small);
 }

@@ -3,11 +3,11 @@ import { SearchContext } from '../../context/SearchContext';
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 
 // Components
-import Blob from '../Blob/Blob';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
 import MainContainer from '../MainContainer/MainContainer';
+import Footer from '../Footer/Footer';
 
 // Style
 import style from './App.module.css';
@@ -42,13 +42,13 @@ function App() {
 
   return (
     <div className={style.app}>
-      <Blob/>
       <ActiveIngredientContext.Provider value={activeIngValue}>
         <SearchContext.Provider value={value}>
           <Header />
           <SearchBar />
           <CardContainer />
           <MainContainer />
+          <Footer/>
         </SearchContext.Provider>
       </ActiveIngredientContext.Provider>
     </div>

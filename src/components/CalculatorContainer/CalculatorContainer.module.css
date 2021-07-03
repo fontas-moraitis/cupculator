@@ -1,15 +1,14 @@
 @import "../../style/_variables";
 
 .calculatorContainer {
-    min-width: 300px;
-    height: 55px;
-    margin: auto;
+    width: 100%;
+    margin: var(--spacing-regular) auto;
     display: flex;
     justify-content: space-around;
     border-radius: 28px;
     padding: var(--spacing-small);
     background-color: var(--color-white);
-    box-shadow: 3px 3px 0 var(--color-dark);
+    box-shadow: 3px 4px 0 var(--color-dark);
 }
 
 .calculatorContainer__separator {

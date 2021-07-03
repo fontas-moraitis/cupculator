@@ -1,0 +1,33 @@
+@import "../../style/_variables";
+
+.app__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 35px;
+  color: var(--color-white);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thin);
+}
+
+.app__footer__langTitle {
+  width: 100px;
+}
+.style.app__footer__langContainer {
+  margin-left: var(--spacing-regular);
+}
+
+.app__footer__btn,
+.app__footer__btnActive {
+  height: var(--font-size-regular);
+  cursor: pointer;
+  color: var(--color-white);
+  padding: 0 var(--spacing-xsmall);
+  margin-right: var(--spacing-regular);
+  font-weight: var(--font-weight-thin);
+}
+
+.app__footer__btnActive {
+  font-weight: var(--font-weight-bold);
+}

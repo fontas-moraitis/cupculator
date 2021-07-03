@@ -25,8 +25,9 @@ const SearchBar = () => {
          aria-label={t('clearSearch')}
          className={style.searchBarButton}
          title={t('clearSearch')}
+         type="button" 
          onClick={() => setSearch('')}
-         type="button" >
+         >
           { search &&
               <img
               width="16"

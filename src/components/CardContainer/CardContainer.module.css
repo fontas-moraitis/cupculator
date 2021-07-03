@@ -2,9 +2,8 @@
 
 .cardholder {
     width: 100%;
-    min-height: 90px;
+    min-height: var(--card-height);
     display: flex;
-    margin-top: var(--spacing-regular);
     overflow-x: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -18,8 +17,7 @@
 @media screen and (min-width: 768px) { 
     /* Show and style scrollbar for horizontal scrolling on desktops */
     .cardholder {
-        padding: var(--spacing-regular) 0;
-        min-height: 120px;
+        min-height: 125px;
     }
     .cardholder::-webkit-scrollbar {
         width: 5px;

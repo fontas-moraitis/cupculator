@@ -2,7 +2,7 @@
     "cookingConversions": "Μαγειρικές μετατροπές",
     "calculator": "Υπολογιστής",
     "conversionsTable": "Πίνακας μετατροπών",
-    "searchIngredient": "Αναζήτησε υλικό",
+    "searchIngredient": "Αναζήτησε υλικό :)",
     "clearSearch": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
     "unit": "Μονάδα μέτρησης",
     "cups": "Κούπες",
@@ -19,5 +19,6 @@
     "sunflowerOil": "Ηλιέλαιο",
     "cacaoPowder": "Σκόνη κακάο",
     "to": "σε",
-    "ingredientCard": "κάρτα υλικού"
+    "ingredientCard": "κάρτα υλικού",
+    "chooseLanguage": "γλώσσα"
 }

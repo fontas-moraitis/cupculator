@@ -22,6 +22,10 @@
 .searchBarButton {
   width: var(--button-min-width);
   height: var(--button-min-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .searchBar:hover,
@@ -39,7 +43,7 @@
     -moz-box-shadow: none;
     box-shadow: none;
     color: var(--color-font-main);
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-input);
 }
 
 .searchBarSearchInput:focus-visible,

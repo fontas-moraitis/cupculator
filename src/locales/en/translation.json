@@ -2,7 +2,7 @@
     "cookingConversions": "Cooking conversions",
     "calculator": "Calculator",
     "conversionsTable": "Conversions Table",
-    "searchIngredient": "Search for an ingredient",
+    "searchIngredient": "Search for an ingredient :)",
     "clearSearch": "Click to clear",
     "unit": "Unit",
     "cups": "cups",
@@ -19,5 +19,6 @@
     "sunflowerOil": "Sunflower oil",
     "cacaoPowder": "Cacao powder",
     "to": "to",
-    "ingredientCard": "Ingredient card"
+    "ingredientCard": "Ingredient card",
+    "chooseLanguage": "language:"
 }
