@@ -9,19 +9,22 @@ import Card from '../Card/Card';
 import style from './CardContainer.module.css';
 
 const CardHolder = () => {
-    const { search } = useContext(SearchContext);
+    const { search, setSearch } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
 
     const fetchData = useCallback(
       async x => {
         const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
-        const response = await fetchIngredient(x || 'allPurposeFlour');
+        const response = await fetchIngredient(x);
         setActiveIng(response.data);
       },
       [setActiveIng],
     );
 
-    const handleCardSelection = (card, event) => fetchData(card.id)
+    const handleCardSelection = (card, event) => {
+      fetchData(card.id);
+      setSearch(card.label);
+    }
 
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
@@ -30,7 +33,7 @@ const CardHolder = () => {
         
         const getIngTimeout = setTimeout(() => {
             fetchData(searchedIngredient);
-        }, 1000);
+        }, 800);
 
         return () => clearTimeout(getIngTimeout);
     }, [search, setActiveIng, fetchData])
