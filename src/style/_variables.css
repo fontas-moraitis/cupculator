@@ -1,19 +1,18 @@
 :root {
   /* colors */
     --color-white: #fff;
-    --color-light: #fafafa;
+    --color-light: #efefe8; /* Search field and icons background */
     --color-grey: #566573;
     --color-dark-grey: #2F2C33;
-    --color-dark: #0a0a0a;
+    --color-dark: #222;
 
-    --color-main: #e06551;
-    --color-secondary: #d8d7ec;
+    --color-main: #ffb703;
+    --color-secondary: #495057;
     --color-highlight: #6ddf8d;
-    /* --background-color-main: #fce4ef; */
-    --background-color-main: linear-gradient(to bottom, #ee9ca7, #ffdde1);
+    --background-color-main: #fff;
    
     --color-font-light: #7c7c7c;
-    --color-font-main: #e06551;
+    --color-font-main: #222;
   
     /* spacing */
     --max-width: 768px;
@@ -37,6 +36,7 @@
     --font-size-regular: 14px;
     --font-size-input: 18px;
     --font-size-large: 24px;
+    --font-size-xlarge: 32px;
 
     /* sizes */
     --border-radius-small: 6px;
@@ -46,17 +46,19 @@
     --button-min-width: 48px;
 
     --card-width: 82px;
-    --card-height: 98px;
+    --card-height: 120px;
     --element-width: 140px;
     --element-width-small: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-main: #ff7769;
-    --color-font-main: #ff7769;
-    --background-color-main: linear-gradient(to top, #c04848, #480048);;
-    --color-secondary: #b8b3f4;
+    --color-main: #ffb703;
+    --color-font-main: #fff;
+    --background-color-main: #000;
+    --color-light: #161a1d; /* Search field and icons background */
+    --color-secondary: #fff;
     --color-font-light: #fff;
+    --color-grey: #778da9;
   }
 }

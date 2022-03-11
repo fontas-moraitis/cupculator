@@ -1,0 +1,13 @@
+.introWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  color: var(--color-font-main);
+}
