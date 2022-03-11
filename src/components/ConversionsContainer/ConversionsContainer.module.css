@@ -14,13 +14,14 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-input);
-  margin-bottom: var(--spacing-regular);
+  margin-bottom: var(--spacing-xsmall);
+  color: var(--color-font-main);
 }
 
 .titleContainer__ingredient {
-  background-color: var(--color-white);
   border-radius: var(--border-radius-small);
-  padding: var(--spacing-xsmall)
+  padding: var(--spacing-xsmall);
+  color: var(--color-font-main);
 }
 
 /* Custom styling for table */
@@ -31,12 +32,17 @@
 }
 
 .conversionsTable thead tr td {
-    color: var(--color-dark);
     font-weight: var(--font-weight-medium);
+    color: var(--color-font-main);
 }
 
 .conversionsTable tbody tr td {
     font-weight: var(--font-weight-thin);
     margin: var(--spacing-xxsmall) 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--color-secondary);
+    color: var(--color-font-main);
+}
+
+.conversionsTable tr {
+  height: 40px;
 }

@@ -1,8 +1,7 @@
-import React, {useRef, useEffect} from 'react';
-// Style
+import { useRef, useEffect } from 'react';
 import style from './CalculatorInput.module.css';
 
-const CalculatorInput = props => {
+const CalculatorInput = (props) => {
   const inputElement = useRef(null);
 
 useEffect(() => {

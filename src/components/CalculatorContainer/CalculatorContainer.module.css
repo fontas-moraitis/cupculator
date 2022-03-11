@@ -2,17 +2,18 @@
 
 .calculatorContainer {
     width: 100%;
-    margin: var(--spacing-regular) auto;
+    margin: var(--spacing-xlarge) auto;
     display: flex;
     justify-content: space-around;
     border-radius: 28px;
     padding: var(--spacing-small);
-    background-color: var(--color-white);
-    box-shadow: 3px 4px 0 var(--color-dark);
+    background-color: var(--color-light);
 }
 
 .calculatorContainer__separator {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Pacifico', cursive, arial, sans-serif;
+  font-size: 24px;
 }

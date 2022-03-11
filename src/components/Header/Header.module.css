@@ -15,8 +15,7 @@
 }
 
 .header_container_logo__title {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-xlarge);
     margin-bottom: var(--spacing-xsmall);
-    font-family: 'Montserrat', 'Arial', sans-serif;
     color: var(--color-font-main);
 }

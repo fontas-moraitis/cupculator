@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
-// Components
 import SpinLoader from '../SpinLoader/SpinLoader';
 import CustomTable from '../CustomTable/CustomTable';
-// Style
+
 import style from './ConversionsContainer.module.css';
-// const CustomTable = React.lazy(() => import('../CustomTable/CustomTable'));
 
 const ConversionsContainer = () => {
     const { t } = useTranslation();
@@ -42,9 +40,9 @@ const ConversionsContainer = () => {
     return (
         <div className={style.conversionsContainer}>
           <div className={style.titleContainer}>
-            <h2 className={style.titleContainer__title}>
+            <h3 className={style.titleContainer__title}>
                 {t('conversionsTable')}
-            </h2>
+            </h3>
             <div className={style.titleContainer__ingredient}>{t(activeIng.id)}</div>
           </div>
           { 

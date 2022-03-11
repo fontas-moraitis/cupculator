@@ -1,16 +1,14 @@
-import React, { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
+import style from './App.module.css';
 
-// Components
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
 import MainContainer from '../MainContainer/MainContainer';
-import Footer from '../Footer/Footer';
-
-// Style
-import style from './App.module.css';
+import UserPreferences from '../UserPreferences/UserPreferences';
+import IntroScreen from '../IntroScreen/IntroScreen';
 
 /**
  * @property {String} search -- user's input, checked againgt ingredients JSON
@@ -36,23 +34,25 @@ import style from './App.module.css';
 function App() {
   const [search, setSearch] = useState("");
   const [activeIng, setActiveIng] = useState("");
-
-  const value = useMemo(() => ({ search, setSearch }), [search, setSearch]);
-  const activeIngValue = useMemo(() => ({ activeIng, setActiveIng }), [activeIng, setActiveIng]);
+  const [settingsOpen, setSettingsOpen] = useState(false)
 
   return (
-    <div className={style.app}>
-      <section className={style.app__container}>
-        <ActiveIngredientContext.Provider value={activeIngValue}>
-          <SearchContext.Provider value={value}>
-            <Header />
+    <div className={ style.app }>
+      <IntroScreen />
+      <div className={ style.app__container }>
+        <ActiveIngredientContext.Provider value={{ activeIng, setActiveIng }}>
+          <SearchContext.Provider value={{ search, setSearch }}>
+            <Header
+              settingsOpen={settingsOpen}
+              setSettingsOpen={setSettingsOpen}
+            />
             <SearchBar />
             <CardContainer />
             <MainContainer />
-            <Footer/>
           </SearchContext.Provider>
         </ActiveIngredientContext.Provider>
-      </section>
+      </div>
+      { settingsOpen && <UserPreferences /> }
     </div>
   );
 }

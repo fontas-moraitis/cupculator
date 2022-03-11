@@ -1,31 +1,35 @@
 @import "../../style/_variables.css";
 
 .customSelector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .customInput {
-  width: 100%;
+  width: 80%;
   height: 100%;
   border: none;
+  border-bottom: 2px solid var(--color-font-main);
+  border-radius: 0;
+  margin-bottom: 8px;
+  padding: 4px 0;
   appearance: none;
   outline: none;
   text-align: center;
-  background: transparent;
+  background-color: transparent;
   font-size: var(--font-size-input);
+  color: var(--color-font-main);
 }
 
 .customInput::-webkit-inner-spin-button, 
 .customInput::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
-  margin: 0; 
+  margin: 0;
 }
 
 .customInputLabel {
-    color: var(--color-dark-grey);
     font-size: var(--font-size-regular);
     text-align: center;
 }
@@ -33,8 +37,8 @@
 .typeDisplay {
     display: flex;
     justify-self: center;
-    align-items: center; 
+    align-items: center;
     margin-left: var(--spacing-xsmall);
     padding: var(--spacing-xsmall);
-    color: var(--color-dark-grey);
+    color: var(--color-font-main);
 }

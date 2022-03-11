@@ -67,7 +67,27 @@ button {
 	background: transparent;
 	outline: none;
 	border: none;
+	padding: 0;
+	margin: 0;
 }
 select {
 	appearance: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+	font-family: 'Pacifico', cursive, arial, sans-serif;
+}
+
+h1, .h1 {
+	font-size: 20vmin;
+}
+
+h2, .h2 {
+	font-size: 34px;
+}
+
+h3, .h3 {
+	font-size: 24px;
 }

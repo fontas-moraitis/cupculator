@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useCallback } from 'react';
+import { useContext, useEffect, useCallback } from 'react';
 import {SearchContext} from '../../context/SearchContext';
 import axios from 'axios';
 import {ActiveIngredientContext} from '../../context/ActiveIngredientContext';

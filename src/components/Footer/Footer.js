@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import langs from '../../data/availableLanguages.json';
-// Style
 import style from './Footer.module.css';
 
 const Footer = () => {
@@ -22,7 +21,7 @@ const Footer = () => {
      >
       { lang.label }
     </button>
-  )
+  );
 
   return (
     <footer className={style.app__footer}>

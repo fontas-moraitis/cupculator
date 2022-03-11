@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useTranslation } from "react-i18next";
 import SpinLoader from '../SpinLoader/SpinLoader'
 // Style
@@ -25,13 +25,15 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
          ref={ingredient.id === activeIngredient ? activeCardRef : null}
          onClick={e => handleCardSelection(ingredient, e)}
          >
-            <img
-             width="34"
-             height="34"
-             src={`${process.env.PUBLIC_URL}/assets/icons/ingredients/${ingredient.id}.svg`}
-             alt={`${ingredient.label}-icon` /* en to be replaced by locale */}
-             className={style.ingredientCardIcon}
-            />
+           <span className={style.iconBackground}>
+              <img
+              width="34"
+              height="34"
+              src={`${process.env.PUBLIC_URL}/assets/icons/ingredients/${ingredient.id}.svg`}
+              alt={`${ingredient.label}-icon` /* en to be replaced by locale */}
+              className={style.ingredientCardIcon}
+              />
+            </span>
             <span className={style.ingredientCardLabel}>
                 {t(ingredient.id)/* en to be replaced by locale */}
             </span>
