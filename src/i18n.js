@@ -1,11 +1,8 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-
-// Translations
 import translationsEnglish from "./locales/en/translation.json";
 import translationsGreek from "./locales/el/translation.json";
 
-// Get language from browser
 const language = window.navigator.userLanguage || window.navigator.language;
 
 i18n.use(LanguageDetector).init({

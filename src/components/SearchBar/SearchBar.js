@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 import { useTranslation } from "react-i18next";
 import useThemeDetector from '../../hooks/useThemeDetector.js';
-import cross from '../../assets/icons/cross.svg'
+// import cross from '../../assets/icons/cross.svg'
 // Style
 import style from './SearchBar.module.css'
 
@@ -38,13 +38,13 @@ const SearchBar = () => {
          onClick={() => setSearch('')}
          >
           { search &&
-              <img
-              width="16"
-              height="32" 
-              src={cross}
-              alt={t('clearSearch')}
-            />
-        }
+						<svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+							<g data-v-cd28a988="">
+								<line x1="4" y1="4" x2="20" y2="20" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
+								<line x1="4" y1="20" x2="20" y2="4" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
+							</g>
+						</svg>
+          }
 				</button>
 			</label>
 		</div>

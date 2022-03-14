@@ -1,7 +1,7 @@
 {
     "cookingConversions": "Μαγειρικές μετατροπές",
     "calculator": "Υπολογιστής",
-    "conversionsTable": "Πίνακας μετατροπών",
+    "conversionsTable": "Πίνακας",
     "searchIngredient": "Αναζήτησε υλικό :)",
     "clearSearch": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
     "unit": "Μονάδα μέτρησης",
@@ -20,6 +20,6 @@
     "cacaoPowder": "Σκόνη κακάο",
     "to": "σε",
     "ingredientCard": "κάρτα υλικού",
-    "chooseLanguage": "γλώσσα",
+    "chooseLanguage": "Γλώσσα:",
     "userPreferencesTitle": "User preferences"
 }
