@@ -1,12 +1,7 @@
-// import { useState } from 'react';
-// import { useTranslation } from "react-i18next";
 import style from './Header.module.css';
 import useThemeDetector from '../../hooks/useThemeDetector.js';
 
 const Header = ({ settingsOpen, setSettingsOpen }) => {
-    // const [showingOptions, setShowingOptions] = useState(false);
-    // const { t } = useTranslation();
-
     const isDarkTheme = useThemeDetector();
 
     return (

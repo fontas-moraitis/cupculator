@@ -9,10 +9,11 @@ const UserPreferences = () => {
   const { t } = useTranslation();
   const [activeLang, setActiveLang] = useState('en');
 
-  let userPrefs = useRef(null)
+  let userPrefs = useRef(null);
 
   const changeLanguage = langId => {
     setActiveLang(langId);
+    localStorage.setItem('language', langId);
     i18next.changeLanguage(langId);
   };
 
@@ -27,6 +28,10 @@ const UserPreferences = () => {
   );
 
   useLayoutEffect(() => {
+    if (localStorage.getItem('language')) {
+      setActiveLang(localStorage.getItem('language'));
+    }
+
     gsap.from(userPrefs, .6, {
       top: '200vh',
       opacity: 0,

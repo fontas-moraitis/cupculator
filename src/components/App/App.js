@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import style from './App.module.css';
-
+import useThemeDetector from '../../hooks/useThemeDetector';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import CardContainer from '../CardContainer/CardContainer';
@@ -34,7 +34,16 @@ import IntroScreen from '../IntroScreen/IntroScreen';
 function App() {
   const [search, setSearch] = useState("");
   const [activeIng, setActiveIng] = useState("");
-  const [settingsOpen, setSettingsOpen] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  const isDarkTheme = useThemeDetector();
+
+  useEffect(() => {
+    const metaTags = document.getElementsByTagName('meta');
+    if (isDarkTheme) {
+      metaTags['theme-color'].content = '#000';
+    }
+  }, [isDarkTheme]);
 
   return (
     <div className={ style.app }>
