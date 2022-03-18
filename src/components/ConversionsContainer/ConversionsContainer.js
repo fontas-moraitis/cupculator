@@ -40,10 +40,12 @@ const ConversionsContainer = () => {
     return (
         <div className={style.conversionsContainer}>
           <div className={style.titleContainer}>
-            <h3 className={style.titleContainer__title}>
+            <p className={style.titleContainer__title}>
                 {t('conversionsTable')}
-            </h3>
-            <div className={style.titleContainer__ingredient}>{t(activeIng.id)}</div>
+            </p>
+            <p className={style.titleContainer__ingredient}>
+              { t(activeIng.id) }
+            </p>
           </div>
           { 
             !activeIng.metrics

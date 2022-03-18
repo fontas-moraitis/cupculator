@@ -6,8 +6,14 @@ const Header = ({ settingsOpen, setSettingsOpen }) => {
 
     return (
         <header className={style.header_container}>
+            <div className={style.header_container_logo}>
+                <h1 className={style.header_container_logo__title}>
+                    Cupculator
+                </h1>
+            </div>
             <button
                 type="button"
+                aria-label="User preferences button"
                 onClick={() => setSettingsOpen(!settingsOpen)}
             >
                 {
@@ -26,12 +32,6 @@ const Header = ({ settingsOpen, setSettingsOpen }) => {
                     </svg>
                 }
             </button>
-            <div className={style.header_container_logo}>
-                <h1 className={style.header_container_logo__title}>
-                    Cupculator
-                </h1>
-                {/* <span>{ t('cookingConversions') }</span> */}
-            </div>
         </header>
     )
 };

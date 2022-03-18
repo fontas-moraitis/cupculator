@@ -7,7 +7,7 @@
     --color-dark: #222;
 
     --color-main: #ffb703;
-    --color-secondary: #495057;
+    --color-secondary: #F4F4F0; /* table rows */
     --color-highlight: #6ddf8d;
     --background-color-main: #fff;
    
@@ -45,7 +45,7 @@
     --button-min-height: 48px;
     --button-min-width: 48px;
 
-    --card-width: 82px;
+    --card-width: 88px;
     --card-height: 120px;
     --element-width: 140px;
     --element-width-small: 80px;
@@ -54,10 +54,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-main: #ffb703;
-    --color-font-main: #fff;
+    --color-font-main: #fefae0;
     --background-color-main: #000;
-    --color-light: #161a1d; /* Search field and icons background */
-    --color-secondary: #fff;
+    --color-light: #30363C; /* Search field and icons background */
+    --color-secondary: #212529; /* Table rows */
     --color-font-light: #fff;
     --color-grey: #778da9;
   }

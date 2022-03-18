@@ -59,5 +59,23 @@
         }
       ]
     }
+  ],
+  "description": "This app allows you to convert grams in cups and visa versa for presice cooking recipe conversions",
+  "screenshots": [
+    {
+      "src": "assets/screenshots/introscreen.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/lighttheme.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/darktheme.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    }
   ]
 }

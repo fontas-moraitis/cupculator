@@ -3,7 +3,6 @@
 .ingredientCard,
 .activeIngredientCard {
     width: var(--card-width);
-    /* height: var(--card-height); */
     flex-shrink: 0;
     padding: var(--spacing-small);
     border-radius: var(--border-radius-large);
