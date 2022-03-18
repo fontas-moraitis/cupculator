@@ -40,8 +40,8 @@ const SearchBar = () => {
           { search &&
 						<svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
 							<g data-v-cd28a988="">
-								<line x1="4" y1="4" x2="20" y2="20" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
-								<line x1="4" y1="20" x2="20" y2="4" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
+								<line x1="4" y1="4" x2="20" y2="20" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+								<line x1="4" y1="20" x2="20" y2="4" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
 							</g>
 						</svg>
           }

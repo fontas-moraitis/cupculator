@@ -1,20 +1,24 @@
 .container {
   width: 95vw;
-  height: 90vh;
+  height: 80vh;
   border-radius: 20px;
   background-color: var(--color-white);
   position: absolute;
   top: 10vh;
   left: 2.5vw;
-  border: 1px solid black;
+  border: 1px solid var(--color-highlight);
   padding: 10%;
   color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .languageWrapper {
   margin-top: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .languageWrapper__options {
@@ -24,17 +28,43 @@
 }
 
 .languageWrapper__btn,
-.languageWrapper__btnActive {
+.languageWrapper__btnActive,
+.installBtn,
+.shareBtn {
   height: 40px;
   cursor: pointer;
   padding: var(--spacing-small);
   margin-right: var(--spacing-regular);
   font-weight: var(--font-weight-thin);
-  border: 1px solid black;
+  border: 1px solid var(--color-main);
   border-radius: 12px;
+  color: var(--color-dark);
 }
 
 .languageWrapper__btnActive {
   font-weight: var(--font-weight-bold);
-  color: #ea698b;
+  /* color: #ea698b; */
+  background-color: var(--color-main);
+  border: 1px solid var(--color-main);
+}
+
+.appBtnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.shareBtn,
+.installBtn {
+  display: flex;
+  align-items: center;
+}
+
+.shareBtn {
+  margin-left: 12px;
+}
+
+@media (display-mode: standalone), (display-mode: minimal-ui) {
+  .installBtn {
+    display: none;
+  }
 }

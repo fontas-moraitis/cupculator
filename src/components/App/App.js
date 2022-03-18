@@ -35,6 +35,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [activeIng, setActiveIng] = useState("");
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [bipEvent, setBipEvent] = useState(null);
 
   const isDarkTheme = useThemeDetector();
 
@@ -43,6 +44,11 @@ function App() {
     if (isDarkTheme) {
       metaTags['theme-color'].content = '#000';
     }
+
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      setBipEvent(e);
+    });
   }, [isDarkTheme]);
 
   return (
@@ -61,7 +67,7 @@ function App() {
           </SearchContext.Provider>
         </ActiveIngredientContext.Provider>
       </div>
-      { settingsOpen && <UserPreferences /> }
+      { settingsOpen && <UserPreferences bipEvent={ bipEvent } /> }
     </div>
   );
 }

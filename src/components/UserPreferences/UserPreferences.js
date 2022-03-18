@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import langs from '../../data/availableLanguages.json';
 import style from './UserPreferences.module.css';
 
-const UserPreferences = () => {
+const UserPreferences = (props) => {
   const { t } = useTranslation();
   const [activeLang, setActiveLang] = useState('en');
 
@@ -17,10 +17,26 @@ const UserPreferences = () => {
     i18next.changeLanguage(langId);
   };
 
+  const installApp = () => {
+    if (props.bipEvent) {
+      props.bipEvent.prompt();
+    } else {
+      alert('To install this app look for Add to Home Screen or Install in browser\'s menu')
+    }
+  };
+
+  const shareApp = () => {
+    navigator.share({
+      title: 'cupculator',
+      url: 'www.cupculator.com',
+    })
+  };
+
   const availableLanguages = langs.map((lang, index) =>
     <button
       className={activeLang === lang.id ? style.languageWrapper__btnActive : style.languageWrapper__btn}
       key={`language-${index}`}
+      aria-label={`select language ${lang.id}`}
       onClick={() => changeLanguage(lang.id)}
     >
       { lang.label }
@@ -45,6 +61,36 @@ const UserPreferences = () => {
       <div className={style.languageWrapper}>
         <h3>{ t('chooseLanguage') }</h3>
         <div className={style.languageWrapper__options}>{ availableLanguages }</div>
+      </div>
+      <div className={style.appBtnContainer}>
+        <button
+          type="button"
+          aria-label="install app"
+          className={ style.installBtn }
+          onClick={  installApp }
+        >
+          <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+            <g data-v-cd28a988="">
+              <line x1="12.03" y1="17.12" x2="12.03" y2="6.12" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
+              <polyline points="16 13.93 12 17.88 8.05 13.93" stroke="#000000" strokeWidth="2" strokeLinecap="round" fill="none"></polyline>
+            </g>
+          </svg>
+          <span>Install</span>
+        </button>
+        <button
+          type="button"
+          aria-label="share app"
+          className={ style.shareBtn }
+          onClick={ shareApp }
+        >
+          <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+            <g data-v-cd28a988="">
+              <line x1="11.97" y1="6.88" x2="11.97" y2="17.88" stroke="#000000" strokeWidth="2" strokeLinecap="round"></line>
+              <polyline points="8.05 10.07 12 6.12 15.95 10.07" stroke="#000000" strokeWidth="2" strokeLinecap="round" fill="none"></polyline>
+            </g>
+          </svg>
+          <span>Share</span>
+        </button>
       </div>
     </div>
   );
