@@ -1,17 +1,17 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 import { useTranslation } from "react-i18next";
 import useThemeDetector from '../../hooks/useThemeDetector.js';
-// import cross from '../../assets/icons/cross.svg'
-// Style
 import style from './SearchBar.module.css'
 
 const SearchBar = () => {
 	const { t } = useTranslation();
-	const [placeholder, setPlaceholder] = useState(t('searchIngredient'));
+	const [placeholder, setPlaceholder] = useState(null);
 	const { search, setSearch } = useContext(SearchContext);
 
 	const isDarkTheme = useThemeDetector();
+
+	useEffect(() => { setPlaceholder(t('searchIngredient'))}, [t]);
 
 	return (
 		<div className={style.searchBar}>
@@ -23,19 +23,19 @@ const SearchBar = () => {
 					</g>
 				</svg>
 				<input
-					className={style.searchBarSearchInput}
-					placeholder={placeholder}
-					value={search}
-					onInput={ e => setSearch(e.target.value) }
+					className={style.searchBarSearchInput }
+					placeholder={ placeholder }
+					value={ search }
+					onInput={ (e) => setSearch(e.target.value) }
 					onFocus={ () => setPlaceholder("") }
 					onBlur={ () => setPlaceholder(t('searchIngredient')) }
 				/>
 				<button
-         aria-label={t('clearSearch')}
-         className={style.searchBarButton}
-         title={t('clearSearch')}
-         type="button" 
-         onClick={() => setSearch('')}
+					aria-label={t('clearSearch')}
+					className={style.searchBarButton}
+					title={t('clearSearch')}
+					type="button" 
+					onClick={() => setSearch('')}
          >
           { search &&
 						<svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

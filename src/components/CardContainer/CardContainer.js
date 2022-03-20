@@ -1,56 +1,73 @@
-import { useContext, useEffect, useCallback } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {SearchContext} from '../../context/SearchContext';
 import axios from 'axios';
+import i18next from 'i18next';
 import {ActiveIngredientContext} from '../../context/ActiveIngredientContext';
-import ingredients from '../../data/ingredients.json';
-// Components
 import Card from '../Card/Card';
-// Style
 import style from './CardContainer.module.css';
 
-const CardHolder = () => {
+const CardHolder = ({ activeLang }) => {
     const { search, setSearch } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
-
-    const fetchData = useCallback(
-      async x => {
-        const fetchIngredient = (id) => axios.get(`api/getIngredient?ingredient=${id}`);
-        const response = await fetchIngredient(x);
-        setActiveIng(response.data);
-      },
-      [setActiveIng],
-    );
-
-    const handleCardSelection = (card, event) => {
-      fetchData(card.id);
-      setSearch(card.label);
+    const [error, setError] = useState(false);
+    const [ingredients, setIngredients] = useState([]);
+    
+    const handleCardSelection = (card) => {
+        getIngredient(card.id);
+        setSearch(card.label);
     }
+
+    const getIngredient = async (id) => {
+        try {
+            const { data } = await axios.get(`api/getIngredient?ingredient=${id}`);
+            setActiveIng(data);
+        } catch {
+            setError(true);
+        }
+    };
+
+    const getListOfIngredients = async (lang) => {
+        try {
+            const { data } = await axios.get(`api/getIngredient?lang=${lang}`);
+            setIngredients(data);
+        } catch {
+            setError(true);
+        }
+    };
+
+    useEffect(() => {
+        getListOfIngredients(i18next.language);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [i18next.language]);
 
     useEffect(() => {
         // On search, 0.5 sec delay after user's input before starting search
-        const normalizedSearch = search.toLowerCase();
-        const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().includes(normalizedSearch))?.id;
-        
+        const normalizedSearch = search.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+        const searchedIngredient = ingredients.find(ingredient => ingredient.label.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").includes(normalizedSearch))?.id || 'allPurposeFlour';
         const getIngTimeout = setTimeout(() => {
-            fetchData(searchedIngredient);
+            getIngredient(searchedIngredient);
         }, 800);
 
         return () => clearTimeout(getIngTimeout);
-    }, [search, setActiveIng, fetchData])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [search])
 
     return (
-        <div className={style.cardholder}>
-            { ingredients.map((ingredient, index) => {
-                return (
-                    <Card
-                    key={index}
-                    ingredient={ingredient}
-                    activeIngredient={activeIng.id}
-                    handleCardSelection={handleCardSelection}
-                    />
-                )
-            })}
-        </div>
+        <>
+            <div className={style.cardholder}>
+                { ingredients.map((ingredient, index) => {
+                    return (
+                        <Card
+                        key={index}
+                        ingredient={ingredient}
+                        activeIngredient={activeIng.id}
+                        handleCardSelection={handleCardSelection}
+                        />
+                    )
+                })}
+            </div>
+            <div>{ error && <p>error</p> }</div>
+        </>
     );
 };
 

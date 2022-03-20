@@ -16,12 +16,11 @@
 }
 
 @media screen and (min-width: 768px) { 
-    /* Show and style scrollbar for horizontal scrolling on desktops */
     .cardholder {
         min-height: 125px;
-        border: 1px solid var(--color-light);
         border-radius: var(--border-radius-large);
-        padding: var(--spacing-xxsmall);
+        padding: var(--spacing-xsmall);
+        box-shadow: inset 2px 2px 12px var(--color-secondary);
     }
 }
    

@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import i18next from 'i18next';
 import { gsap, Expo } from 'gsap';
 import { useTranslation } from 'react-i18next';
@@ -7,12 +7,11 @@ import style from './UserPreferences.module.css';
 
 const UserPreferences = (props) => {
   const { t } = useTranslation();
-  const [activeLang, setActiveLang] = useState('en');
 
   let userPrefs = useRef(null);
 
   const changeLanguage = langId => {
-    setActiveLang(langId);
+    // props.setActiveLang(langId);
     localStorage.setItem('language', langId);
     i18next.changeLanguage(langId);
   };
@@ -28,13 +27,13 @@ const UserPreferences = (props) => {
   const shareApp = () => {
     navigator.share({
       title: 'cupculator',
-      url: 'www.cupculator.com',
+      url: '/',
     })
   };
 
   const availableLanguages = langs.map((lang, index) =>
     <button
-      className={activeLang === lang.id ? style.languageWrapper__btnActive : style.languageWrapper__btn}
+      className={i18next.language === lang.id ? style.languageWrapper__btnActive : style.languageWrapper__btn}
       key={`language-${index}`}
       aria-label={`select language ${lang.id}`}
       onClick={() => changeLanguage(lang.id)}
@@ -44,10 +43,6 @@ const UserPreferences = (props) => {
   );
 
   useLayoutEffect(() => {
-    if (localStorage.getItem('language')) {
-      setActiveLang(localStorage.getItem('language'));
-    }
-
     gsap.from(userPrefs, .6, {
       top: '200vh',
       opacity: 0,
@@ -75,7 +70,7 @@ const UserPreferences = (props) => {
               <polyline points="16 13.93 12 17.88 8.05 13.93" stroke="#000000" strokeWidth="2" strokeLinecap="round" fill="none"></polyline>
             </g>
           </svg>
-          <span>Install</span>
+          <span>{ t('installBtn') }</span>
         </button>
         <button
           type="button"
@@ -89,7 +84,7 @@ const UserPreferences = (props) => {
               <polyline points="8.05 10.07 12 6.12 15.95 10.07" stroke="#000000" strokeWidth="2" strokeLinecap="round" fill="none"></polyline>
             </g>
           </svg>
-          <span>Share</span>
+          <span>{ t('shareBtn') }</span>
         </button>
       </div>
     </div>

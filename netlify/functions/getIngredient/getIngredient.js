@@ -3,12 +3,23 @@ const path = require("path");
 
 exports.handler = async (event, context, callback) => {
     const querystring = event.queryStringParameters;
-    const activeIngredient = querystring.ingredient || 'allPurposeFlour';
+    const content = await fs.readFile(path.join(__dirname, "data.json"), {encoding: "utf-8"});
+    const parsed = JSON.parse(content);
 
+    if (querystring.lang) {
+      let listOfIngredients = parsed.map(ingredient => {
+        return ({ id: ingredient.id, label: ingredient.name[querystring.lang] });
+      })
+      return {
+        statusCode: 200,
+        contentType: 'application/json',
+        charset: 'utf-8',
+        body: JSON.stringify(listOfIngredients)
+      };
+    }
+  else {
+    let activeIngredient = querystring.ingredient;
     try {
-      const content = await fs.readFile(path.join(__dirname, "data.json"), {encoding: "utf-8"});
-      const parsed = JSON.parse(content);
-
       const searchId = (x, id) => {
         for(var i = 0; i < x.length; i++) {
             if (x[i]['id']==id){
@@ -18,16 +29,17 @@ exports.handler = async (event, context, callback) => {
         return -1;
     }
     
-   const myIngredient = searchId(parsed, activeIngredient);
+    const myIngredient = searchId(parsed, activeIngredient);
 
-      return {
-        statusCode: 200,
-        body: JSON.stringify(myIngredient)
-      };
-    } catch (e) {
-      return {
-        statusCode: 500,
-        body: e
-      };
+        return {
+          statusCode: 200,
+          body: JSON.stringify(myIngredient)
+        };
+      } catch (e) {
+        return {
+          statusCode: 500,
+          body: e
+        };
+      }
     }
   };

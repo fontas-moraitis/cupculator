@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import i18next from 'i18next';
 import { SearchContext } from '../../context/SearchContext';
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import style from './App.module.css';
@@ -36,7 +37,6 @@ function App() {
   const [activeIng, setActiveIng] = useState("");
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [bipEvent, setBipEvent] = useState(null);
-
   const isDarkTheme = useThemeDetector();
 
   useEffect(() => {
@@ -45,10 +45,14 @@ function App() {
       metaTags['theme-color'].content = '#000';
     }
 
-    window.addEventListener("beforeinstallprompt", e => {
+    window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       setBipEvent(e);
     });
+
+    if (localStorage.getItem('language')) {
+      i18next.changeLanguage(localStorage.getItem('language'));
+    }
   }, [isDarkTheme]);
 
   return (
@@ -67,7 +71,8 @@ function App() {
           </SearchContext.Provider>
         </ActiveIngredientContext.Provider>
       </div>
-      { settingsOpen && <UserPreferences bipEvent={ bipEvent } /> }
+      { settingsOpen && <UserPreferences bipEvent={ bipEvent } />
+      }
     </div>
   );
 }

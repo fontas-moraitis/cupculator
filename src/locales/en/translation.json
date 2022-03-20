@@ -2,7 +2,7 @@
     "cookingConversions": "Cooking conversions",
     "calculator": "Calculator",
     "conversionsTable": "Conversions Table",
-    "searchIngredient": "Search for an ingredient :)",
+    "searchIngredient": "Search for an ingredient",
     "clearSearch": "Click to clear",
     "unit": "Unit",
     "cups": "cups",
@@ -21,5 +21,7 @@
     "to": "to",
     "ingredientCard": "Ingredient card",
     "chooseLanguage": "Language:",
-    "userPreferencesTitle": "User preferences"
+    "userPreferencesTitle": "User preferences",
+    "installBtn": "Install",
+    "shareBtn": "Share"
 }
