@@ -21,7 +21,7 @@ i18n.use(LanguageDetector).init({
     // Common namespace used around the full app?
     ns: ["translations"],
     defaultNS: "translations",
-    lng: language,
+    lng: language.split('-')[0],
     keySeparator: false, // use content as keys instead
     supportedLngs: ['en', 'el'],
     interpolation: {
