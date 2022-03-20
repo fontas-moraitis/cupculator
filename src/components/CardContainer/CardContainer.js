@@ -1,16 +1,19 @@
-import { useContext, useEffect, useState } from 'react';
-import {SearchContext} from '../../context/SearchContext';
+import { useContext, useEffect, useState, useRef } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 import axios from 'axios';
 import i18next from 'i18next';
-import {ActiveIngredientContext} from '../../context/ActiveIngredientContext';
+import { useTranslation } from "react-i18next";
+import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import Card from '../Card/Card';
 import style from './CardContainer.module.css';
 
-const CardHolder = ({ activeLang }) => {
+const CardHolder = () => {
+    const { t } = useTranslation();
     const { search, setSearch } = useContext(SearchContext);
     const { activeIng, setActiveIng } = useContext(ActiveIngredientContext);
     const [error, setError] = useState(false);
     const [ingredients, setIngredients] = useState([]);
+    const scrollContainer = useRef(null);
     
     const handleCardSelection = (card) => {
         getIngredient(card.id);
@@ -36,6 +39,13 @@ const CardHolder = ({ activeLang }) => {
     };
 
     useEffect(() => {
+        scrollContainer.current.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.current.scrollLeft += evt.deltaY;
+        });
+    }, []);
+
+    useEffect(() => {
         getListOfIngredients(i18next.language);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [i18next.language]);
@@ -54,7 +64,7 @@ const CardHolder = ({ activeLang }) => {
 
     return (
         <>
-            <div className={style.cardholder}>
+            <div className={ style.cardholder } ref={ scrollContainer }>
                 { ingredients.map((ingredient, index) => {
                     return (
                         <Card
@@ -66,7 +76,7 @@ const CardHolder = ({ activeLang }) => {
                     )
                 })}
             </div>
-            <div>{ error && <p>error</p> }</div>
+            <div>{ error && <p>{ t('fetchingError') }</p> }</div>
         </>
     );
 };

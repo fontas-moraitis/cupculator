@@ -23,5 +23,6 @@
     "chooseLanguage": "Γλώσσα",
     "userPreferencesTitle": "Επιλογές χρήστη",
     "installBtn": "Εγκατάσταση",
-    "shareBtn": "Μοιράσου το"
+    "shareBtn": "Μοιράσου το",
+    "fetchingError": "Παρουσιάστηκε σφάλμα κατα την προέλευση των δεδομένων"
 }
