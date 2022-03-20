@@ -23,5 +23,6 @@
     "chooseLanguage": "Language:",
     "userPreferencesTitle": "User preferences",
     "installBtn": "Install",
-    "shareBtn": "Share"
+    "shareBtn": "Share",
+    "fetchingError": "There was an error fetching the data"
 }

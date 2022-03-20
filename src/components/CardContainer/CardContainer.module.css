@@ -18,9 +18,23 @@
 @media screen and (min-width: 768px) { 
     .cardholder {
         min-height: 125px;
-        border-radius: var(--border-radius-large);
         padding: var(--spacing-xsmall);
-        box-shadow: inset 2px 2px 12px var(--color-secondary);
+    }
+
+    .cardholder::-webkit-scrollbar {
+        width: 8px; /* Mostly for vertical scrollbars */
+        height: 8px; /* Mostly for horizontal scrollbars */
+        display: block;
+    }
+
+    .cardholder::-webkit-scrollbar-thumb { /* Foreground */
+        background: var(--color-light);
+        border-radius: var(--border-radius-large);
+    }
+
+    .cardholder::-webkit-scrollbar-track { /* Background */
+        background: #FAFAF8;
+        border-radius: var(--border-radius-large);
     }
 }
    
