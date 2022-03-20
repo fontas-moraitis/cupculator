@@ -74,6 +74,14 @@ select {
 	appearance: none;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {

@@ -23,7 +23,7 @@ i18n.use(LanguageDetector).init({
     defaultNS: "translations",
     lng: language,
     keySeparator: false, // use content as keys instead
-    supportedLngs: ['en', 'en-GB', 'el', 'el-GR'],
+    supportedLngs: ['en', 'el'],
     interpolation: {
         escapeValue: false,
         formatSeparator: ","

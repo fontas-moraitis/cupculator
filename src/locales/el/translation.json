@@ -1,7 +1,7 @@
 {
     "cookingConversions": "Μαγειρικές μετατροπές",
     "calculator": "Υπολογιστής",
-    "conversionsTable": "Πίνακας",
+    "conversionsTable": "Πίνακας μετατροπών",
     "searchIngredient": "Αναζήτησε υλικό",
     "clearSearch": "Πάτησε εδώ για εκκαθάριση παραμέτρου",
     "unit": "Μονάδα μέτρησης",
@@ -21,5 +21,7 @@
     "to": "σε",
     "ingredientCard": "κάρτα υλικού",
     "chooseLanguage": "Γλώσσα",
-    "userPreferencesTitle": "User preferences"
+    "userPreferencesTitle": "Επιλογές χρήστη",
+    "installBtn": "Εγκατάσταση",
+    "shareBtn": "Μοιράσου το"
 }

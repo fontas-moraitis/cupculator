@@ -1,17 +1,22 @@
 .container {
-  width: 95vw;
-  height: 80vh;
+  width: 100%;
+  max-width: var(--max-width);
+  height: 90vh;
+  margin: 0 auto;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 10vh;
   border-radius: 20px;
   background-color: var(--color-white);
   position: absolute;
-  top: 10vh;
-  left: 2.5vw;
-  border: 1px solid var(--color-highlight);
-  padding: 10%;
+  padding: 10vmin 5vmin 25vmin 5vmin;
   color: var(--color-dark);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -6px 18px var(--color-light);
 }
 
 .languageWrapper {
@@ -43,7 +48,6 @@
 
 .languageWrapper__btnActive {
   font-weight: var(--font-weight-bold);
-  /* color: #ea698b; */
   background-color: var(--color-main);
   border: 1px solid var(--color-main);
 }
@@ -57,6 +61,7 @@
 .installBtn {
   display: flex;
   align-items: center;
+  border: 1px solid var(--color-dark-grey);
 }
 
 .shareBtn {

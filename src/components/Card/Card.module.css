@@ -20,6 +20,11 @@
     font-weight: var(--font-weight-medium);
 }
 
+.ingredientCard:focus-visible,
+.activeIngredientCard:focus-visible {
+    color: var(--color-highlight);
+}
+
 .activeIngredientCard {
     overflow: hidden;
     background-color: var(--color-main);

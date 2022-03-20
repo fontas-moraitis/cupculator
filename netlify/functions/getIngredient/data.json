@@ -2,7 +2,8 @@
   {
     "id": "allPurposeFlour",
     "name": {
-      "en": "Flour"
+      "en": "Flour",
+      "el": "Αλεύρι"
     },
     "unit": "g",
     "metrics": {
@@ -17,7 +18,8 @@
   {
     "id": "breadFlour",
     "name": {
-      "en": "Bread flour"
+      "en": "Bread flour",
+      "el": "Σκληρό αλεύρι"
     },
     "unit": "g",
     "metrics": {
@@ -32,7 +34,8 @@
   {
     "id": "caneSugar",
     "name": {
-      "en": "Cane sugar"
+      "en": "Cane sugar",
+      "el": "Ακατέργαστη ζάχαρη"
     },
     "unit": "g",
     "metrics": {
@@ -47,7 +50,8 @@
   {
     "id": "coconutSugar",
     "name": {
-      "en": "Coconut sugar"
+      "en": "Coconut sugar",
+      "el": "Ζάχαρη καρύδας"
     },
     "unit": "g",
     "metrics": {
@@ -62,7 +66,8 @@
   {
     "id": "bakingPowder",
     "name": {
-      "en": "Baking powder"
+      "en": "Baking powder",
+      "el": "Μπέικιν παουντερ"
     },
     "unit": "g",
     "metrics": {
@@ -77,7 +82,8 @@
   {
     "id": "bakingSoda",
     "name": {
-      "en": "Baking soda"
+      "en": "Baking soda",
+      "el": "Μαγειρική σόδα"
     },
     "unit": "g",
     "metrics": {
@@ -92,7 +98,8 @@
   {
     "id": "cacaoPowder",
     "name": {
-      "en": "Cacao powder"
+      "en": "Cacao powder",
+      "el": "Σκόνη κακάο"
     },
     "unit": "g",
     "metrics": {
@@ -107,7 +114,8 @@
   {
     "id": "oliveOil",
     "name": {
-      "en": "Olive oil"
+      "en": "Olive oil",
+      "el": "Ελαιόλαδο"
     },
     "unit": "ml",
     "metrics": {
@@ -122,7 +130,8 @@
   {
     "id": "sunflowerOil",
     "name": {
-      "en": "Sunflower oil"
+      "en": "Sunflower oil",
+      "el": "Ηλιέλαιο"
     },
     "unit": "ml",
     "metrics": {
@@ -137,7 +146,8 @@
   {
     "id": "oatMilk",
     "name": {
-      "en": "Oat milk"
+      "en": "Oat milk",
+      "el": "Γάλα βρώμης"
     },
     "unit": "ml",
     "metrics": {

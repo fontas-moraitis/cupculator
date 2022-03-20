@@ -42,10 +42,6 @@
     color: var(--color-font-main);
 }
 
-/* .conversionsTable tr {
-  height: 40px;
-} */
-
 .conversionsTable td {
   background-color: var(--color-secondary);
   padding: 0 var(--spacing-xsmall);
