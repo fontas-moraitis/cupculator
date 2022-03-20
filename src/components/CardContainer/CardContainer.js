@@ -37,6 +37,7 @@ const CardHolder = ({ activeLang }) => {
 
     useEffect(() => {
         getListOfIngredients(i18next.language);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [i18next.language]);
 
     useEffect(() => {
@@ -48,6 +49,7 @@ const CardHolder = ({ activeLang }) => {
         }, 800);
 
         return () => clearTimeout(getIngTimeout);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
 
     return (
