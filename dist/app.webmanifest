@@ -1,0 +1,81 @@
+{
+  "name": "Cupculator",
+  "short_name": "Cupculator",
+  "start_url": "./",
+  "id": "/",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "assets/logo/favicon16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo/favicon32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo/logo154.png",
+      "type": "image/png",
+      "sizes": "154x154"
+    },
+    {
+      "src": "assets/logo/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/logo/logo384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "assets/logo/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "assets/logo/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "cupculator",
+      "short_name": "cupculator",
+      "url": "/",
+      "icons": [
+        {
+          "src": "assets/logo/logo192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "description": "This app allows you to convert grams in cups and visa versa for presice cooking recipe conversions",
+  "screenshots": [
+    {
+      "src": "assets/screenshots/introscreen.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/lighttheme.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/screenshots/darktheme.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    }
+  ]
+}
