@@ -22,8 +22,7 @@ const CardHolder = () => {
 
     const getIngredient = async (id) => {
         try {
-            // const { data } = await axios.get(`api/getIngredient?ingredient=${id}`);
-            const data = [];
+            const { data } = await axios.get(`/api/getIngredient?ingredient=${id}`);
             setActiveIng(data);
         } catch {
             setError(true);
@@ -32,8 +31,7 @@ const CardHolder = () => {
 
     const getListOfIngredients = async (lang) => {
         try {
-            // const { data } = await axios.get(`api/getIngredient?lang=${lang}`);
-            const data = [];
+            const { data } = await axios.get(`/api/getIngredient?lang=${lang}`);
             setIngredients(data);
         } catch {
             setError(true);

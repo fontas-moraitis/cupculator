@@ -29,7 +29,7 @@ const IngredientCard = ({ ingredient, activeIngredient, handleCardSelection }) =
           <img
             width="34"
             height="34"
-            src={`${process.env.PUBLIC_URL}/assets/icons/ingredients/${ingredient.id}.svg`}
+            src={`/assets/icons/ingredients/${ingredient.id}.svg`}
             alt={`${ingredient.label}-icon` /* en to be replaced by locale */}
             className={style.ingredientCardIcon}
           />

@@ -6,7 +6,6 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "dev": "vercel dev",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
