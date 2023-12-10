@@ -2,20 +2,32 @@ import React, { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import SpinLoader from '../SpinLoader/SpinLoader';
 import CustomTable from '../CustomTable/CustomTable';
-
 import style from './ConversionsContainer.module.css';
+import { Ingredient } from '../../context/ActiveIngredientContext';
 
-const ConversionsContainer = ({ activeIng }) => {
+type ConversionsContainerProps = {
+  activeIng: Ingredient;
+}
+
+export type TableData = {
+  id: string;
+  size: string;
+  icon: string;
+  key: string;
+  value: number | string;
+}
+
+const ConversionsContainer: React.FC<ConversionsContainerProps> = ({ activeIng }) => {
   const { t } = useTranslation();
 
   // Populate header of table
-  const theadData = [];
+  const theadData: { id: string; label: string }[] = [];
   // Populate body of table
-  let tbodyData = [];
+  let tbodyData: TableData[] = [];
 
   if (activeIng?.metrics) {
     for (const [key, value] of Object.entries(activeIng?.metrics)) {
-      const populateTable = (key, value) => {
+      const populateTable = (key: string, value: { us: number }) => {
         switch (key) {
           case 'cup':
             return { id: key, size: '250ml', icon: '/assets/cup-sizes/Cup1.svg', key: '1 cup', value: value.us || '-' }

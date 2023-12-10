@@ -31,7 +31,6 @@ import IntroScreen from '../IntroScreen/IntroScreen';
   }
  * 
  */
-
 function App() {
   const [search, setSearch] = useState("");
   const [activeIng, setActiveIng] = useState(null);
@@ -75,7 +74,7 @@ function App() {
         </ActiveIngredientContext.Provider>
       </div>
 
-      {settingsOpen && <UserPreferences bipEvent={bipEvent} />}
+      {settingsOpen && <UserPreferences bipEvent={bipEvent} setSettingsOpen={setSettingsOpen} />}
     </div>
   );
 }

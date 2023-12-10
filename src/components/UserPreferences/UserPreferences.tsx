@@ -5,18 +5,25 @@ import { useTranslation } from 'react-i18next';
 import langs from '../../data/availableLanguages.json';
 import style from './UserPreferences.module.css';
 
-const UserPreferences = (props) => {
+type UserPreferencesProp = {
+  bipEvent: any;
+  setSettingsOpen: (open: boolean) => void;
+}
+
+const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent, setSettingsOpen }) => {
   let userPrefs = useRef(null);
 
   const { t } = useTranslation();
-  const changeLanguage = langId => {
+
+  const changeLanguage = (langId: string) => {
     localStorage.setItem('language', langId);
     i18next.changeLanguage(langId);
+    setSettingsOpen(false);
   };
 
   const installApp = () => {
-    if (props.bipEvent) {
-      props.bipEvent.prompt();
+    if (bipEvent) {
+      bipEvent.prompt();
     } else {
       alert('To install this app look for Add to Home Screen or Install in browser\'s menu')
     }
@@ -53,7 +60,9 @@ const UserPreferences = (props) => {
       <h2 className={style.container__title}>
         {t('userPreferencesTitle')}
       </h2>
+
       {availableLanguages}
+
       <button
         type="button"
         aria-label="install app"

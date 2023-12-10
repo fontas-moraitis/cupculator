@@ -1,8 +1,15 @@
 import React from "react";
 import TableRow from "./TableRow";
 import TableHeadItem from "./TableHeadItem";
+import { TableData } from "../ConversionsContainer/ConversionsContainer";
 
-const CustomTable = ({ theadData, tbodyData, customClass }) => {
+interface CustomTableProps {
+    theadData: { id: string; label: string }[];
+    tbodyData: TableData[];
+    customClass: string;
+}
+
+const CustomTable: React.FC<CustomTableProps> = ({ theadData, tbodyData, customClass }) => {
     return (
         <table className={customClass}>
             <thead>
