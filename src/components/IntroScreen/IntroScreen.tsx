@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import React from "react";
 import { useRef, useLayoutEffect } from 'react';
 import { gsap, Expo } from 'gsap';
 
@@ -10,26 +10,26 @@ const IntroScreen = () => {
   let culator = useRef<HTMLSpanElement>(null);
 
   useLayoutEffect(() => {
-    gsap.to(introWrapperRef, 2.9, {
+    gsap.to(introWrapperRef.current, 2.9, {
       delay: 1,
       opacity: 0,
       display: 'none',
       ease: Expo.easeInOut,
     });
 
-    gsap.from(cup, 1.6, {
+    gsap.from(cup.current, 1.6, {
       y: '-200vh',
       opacity: 0.5,
       ease: Expo.easeInOut,
     });
 
-    gsap.from(culator, 1.6, {
+    gsap.from(culator.current, 1.6, {
       y: '200vh',
       opacity: 0.5,
       ease: Expo.easeInOut,
     });
 
-    gsap.to([cup, culator], .6, {
+    gsap.to([cup.current, culator.current], .6, {
       delay: 1.6,
       opacity: 0,
       ease: Expo.easeInOut,
@@ -38,11 +38,11 @@ const IntroScreen = () => {
 
   return (
     <div
-      ref={el => introWrapperRef = el}
+      ref={introWrapperRef}
       className={style.introWrapper}
     >
-      <span ref={el => cup = el} className='h1'>cup</span>
-      <span ref={el => culator = el} className='h1'>culator</span>
+      <span ref={cup} className='h1'>cup</span>
+      <span ref={culator} className='h1'>culator</span>
     </div>
   )
 };
