@@ -52,11 +52,13 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
       ease: Expo.easeInOut,
     });
 
-    gsap.to(userPrefs, .6, {
-      top: '200vh',
-      opacity: 0,
-      ease: Expo.easeInOut,
-    });
+    return () => {
+      gsap.to(userPrefs.current, .6, {
+        top: '200vh',
+        opacity: 0,
+        ease: Expo.easeInOut,
+      });
+    };
   }, []);
 
   return (
