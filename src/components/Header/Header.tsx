@@ -10,6 +10,14 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
     const isDarkTheme = useDarkModeDetector();
 
+    const handleClickButton = () => {
+        setSettingsOpen(!settingsOpen);
+
+        if ("vibrate" in navigator) {
+            navigator.vibrate(200); // Vibrate for 200 milliseconds
+        }
+    }
+
     return (
         <header className={style.header_container}>
             <div className={style.header_container_logo}>
@@ -20,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
             <button
                 type="button"
                 aria-label="User preferences button"
-                onClick={() => setSettingsOpen(!settingsOpen)}
+                onClick={handleClickButton}
             >
                 {
                     settingsOpen ?
