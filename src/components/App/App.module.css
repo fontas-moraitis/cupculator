@@ -8,7 +8,7 @@
 
 .app__container {
   max-width: var(--max-width);
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   padding: var(--spacing-large) var(--spacing-regular) 0 var(--spacing-regular);
   display: flex;
