@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { SearchContext } from '../../context/SearchContext';
-import axios from 'axios';
 import i18next from 'i18next';
 import { useTranslation } from "react-i18next";
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
@@ -22,7 +21,8 @@ const CardHolder = () => {
 
     const getIngredient = async (id) => {
         try {
-            const { data } = await axios.get(`/api/getIngredient?ingredient=${id}`);
+            const response = await fetch(`/api/getIngredient?ingredient=${id}`);
+            const data = await response.json();
             setActiveIng(data);
         } catch {
             setError(true);
@@ -31,7 +31,8 @@ const CardHolder = () => {
 
     const getListOfIngredients = async (lang) => {
         try {
-            const { data } = await axios.get(`/api/getIngredient?lang=${lang}`);
+            const response = await fetch(`/api/getIngredient?lang=${lang}`);
+            const data = await response.json();
             setIngredients(data);
         } catch {
             setError(true);
