@@ -1,15 +1,16 @@
-import React from 'react';
-// Components
+import React, { useContext } from 'react';
+import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import CalculatorContainer from '../CalculatorContainer/CalculatorContainer';
 import ConversionsContainer from '../ConversionsContainer/ConversionsContainer';
-// Style
 import style from './MainContainer.module.css';
 
 const MainContainer = () => {
+    const { activeIng } = useContext(ActiveIngredientContext);
+
     return (
         <div className={style.mainContainer}>
-            <CalculatorContainer />
-            <ConversionsContainer />
+            {(activeIng && <CalculatorContainer activeIng={activeIng} />)}
+            {(activeIng && <ConversionsContainer activeIng={activeIng} />)}
         </div>
     )
 }

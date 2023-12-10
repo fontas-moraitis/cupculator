@@ -34,7 +34,7 @@ import IntroScreen from '../IntroScreen/IntroScreen';
 
 function App() {
   const [search, setSearch] = useState("");
-  const [activeIng, setActiveIng] = useState("");
+  const [activeIng, setActiveIng] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [bipEvent, setBipEvent] = useState<Event | null>(null);
   const isDarkTheme = useThemeDetector();

@@ -2,9 +2,14 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import { SearchContext } from '../../context/SearchContext';
 import { useTranslation } from "react-i18next";
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
-import type { CardIngredient } from '../../context/ActiveIngredientContext';
+import type { Ingredient } from '../../context/ActiveIngredientContext';
 import Card from '../Card/Card';
 import style from './CardHolder.module.css';
+
+export type CardIngredient = {
+    id: string;
+    label: string;
+}
 
 
 const CardHolder: React.FC = () => {
@@ -15,15 +20,11 @@ const CardHolder: React.FC = () => {
     const [ingredients, setIngredients] = useState<CardIngredient[]>([]);
     const scrollContainer = useRef<HTMLDivElement>(null);
 
-    const handleCardSelection = (card: CardIngredient) => {
-        getIngredient(card.id);
-        setSearch(card.label);
-    };
-
     const getIngredients = async (lang: string) => {
         try {
-            const response = await fetch(`/api/getIngredient?lang=${lang}`);
+            const response = await fetch(`/api/getIngredients?lang=${lang}`);
             const ingredients = await response.json() as CardIngredient[];
+
             setIngredients(ingredients);
         } catch (error) {
             setError(true);
@@ -32,13 +33,18 @@ const CardHolder: React.FC = () => {
 
     const getIngredient = async (id: string) => {
         try {
-            const response = await fetch(`/api/getIngredient?ingredient=${id}`);
-            const ingredient = await response.json() as CardIngredient;
+            const response = await fetch(`/api/getIngredients?ingredient=${id}`);
+            const ingredient = await response.json() as Ingredient;
 
             setActiveIng(ingredient);
         } catch (error) {
             setError(true);
         }
+    };
+
+    const handleCardSelection = (card: CardIngredient) => {
+        getIngredient(card.id);
+        setSearch(card.label);
     };
 
     useEffect(() => {
@@ -64,17 +70,18 @@ const CardHolder: React.FC = () => {
 
     useEffect(() => {
         const normalizedSearch = search.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+
         const searchedIngredient = ingredients.find(ingredient =>
             ingredient.label.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").includes(normalizedSearch)
-        )?.id || null;
+        )?.id;
 
-        if (searchedIngredient) {
-            const getIngTimeout = setTimeout(() => {
-                getIngredient(searchedIngredient);
-            }, 500);
 
-            return () => clearTimeout(getIngTimeout);
-        }
+        const getIngTimeout = setTimeout(() => {
+            getIngredient(searchedIngredient || 'allPurposeflour');
+        }, 500);
+
+        return () => clearTimeout(getIngTimeout);
+
     }, [search, ingredients]);
 
     return (
@@ -84,7 +91,7 @@ const CardHolder: React.FC = () => {
                     <Card
                         key={ingredient.id}
                         ingredient={ingredient}
-                        activeIngredient={activeIng!.id}
+                        activeIngredient={activeIng?.id}
                         handleCardSelection={handleCardSelection}
                     />
                 ))}

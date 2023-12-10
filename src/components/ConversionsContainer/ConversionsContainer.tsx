@@ -1,22 +1,20 @@
 import React, { useContext } from 'react';
 import { useTranslation } from "react-i18next";
-import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import SpinLoader from '../SpinLoader/SpinLoader';
 import CustomTable from '../CustomTable/CustomTable';
 
 import style from './ConversionsContainer.module.css';
 
-const ConversionsContainer = () => {
+const ConversionsContainer = ({ activeIng }) => {
   const { t } = useTranslation();
-  const { activeIng } = useContext(ActiveIngredientContext);
 
   // Populate header of table
   const theadData = [];
   // Populate body of table
   let tbodyData = [];
 
-  if (activeIng.metrics) {
-    for (const [key, value] of Object.entries(activeIng.metrics)) {
+  if (activeIng?.metrics) {
+    for (const [key, value] of Object.entries(activeIng?.metrics)) {
       const populateTable = (key, value) => {
         switch (key) {
           case 'cup':
@@ -44,11 +42,11 @@ const ConversionsContainer = () => {
           {t('conversionsTable')}
         </p>
         <p className={style.titleContainer__ingredient}>
-          {t(activeIng.id)}
+          {t(activeIng?.id)}
         </p>
       </div>
       {
-        !activeIng.metrics
+        !activeIng?.metrics
           ? <SpinLoader />
           : <CustomTable theadData={theadData} tbodyData={tbodyData} customClass={style.conversionsTable} />
       }
