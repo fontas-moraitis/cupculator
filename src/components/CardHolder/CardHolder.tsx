@@ -9,8 +9,7 @@ import style from './CardHolder.module.css';
 export type CardIngredient = {
     id: string;
     label: string;
-}
-
+};
 
 const CardHolder: React.FC = () => {
     const { t, i18n } = useTranslation();
