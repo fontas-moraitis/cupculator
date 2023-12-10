@@ -50,6 +50,7 @@ const CardHolder: React.FC = () => {
     useEffect(() => {
         const handleScroll = (evt: WheelEvent) => {
             evt.preventDefault();
+
             if (scrollContainer.current) {
                 scrollContainer.current.scrollLeft += evt.deltaY;
             }
@@ -58,7 +59,7 @@ const CardHolder: React.FC = () => {
         const currentScrollContainer = scrollContainer.current;
 
         if (currentScrollContainer) {
-            currentScrollContainer.addEventListener("wheel", handleScroll);
+            currentScrollContainer.addEventListener("wheel", handleScroll, { passive: true });
 
             return () => currentScrollContainer.removeEventListener("wheel", handleScroll);
         }

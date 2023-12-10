@@ -74,7 +74,7 @@ function App() {
         </ActiveIngredientContext.Provider>
       </div>
 
-      {settingsOpen && <UserPreferences bipEvent={bipEvent} setSettingsOpen={setSettingsOpen} />}
+      {settingsOpen && <UserPreferences bipEvent={bipEvent} />}
     </div>
   );
 }

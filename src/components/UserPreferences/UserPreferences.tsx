@@ -7,10 +7,9 @@ import style from './UserPreferences.module.css';
 
 type UserPreferencesProp = {
   bipEvent: any;
-  setSettingsOpen: (open: boolean) => void;
 }
 
-const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent, setSettingsOpen }) => {
+const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
   let userPrefs = useRef(null);
 
   const { t } = useTranslation();
@@ -18,7 +17,6 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent, setSettingsO
   const changeLanguage = (langId: string) => {
     localStorage.setItem('language', langId);
     i18next.changeLanguage(langId);
-    setSettingsOpen(false);
   };
 
   const installApp = () => {
