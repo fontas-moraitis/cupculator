@@ -3,5 +3,7 @@ import { createContext } from 'react';
 export const SearchContext = createContext<
     {
         search: string; setSearch: React.Dispatch<React.SetStateAction<string>>
-    }
-    | null>(null);
+    }>({
+        search: '', // some default value
+        setSearch: () => { }, // noop function
+    });

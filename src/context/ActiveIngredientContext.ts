@@ -1,7 +1,14 @@
 import { createContext } from 'react';
 
-export const ActiveIngredientContext = createContext<
-    {
-        activeIng: string; setActiveIng: React.Dispatch<React.SetStateAction<string>>
-    }
-    | null>(null);
+export type CardIngredient = {
+    id: string;
+    label: string;
+}
+
+export const ActiveIngredientContext = createContext<{
+    activeIng: CardIngredient | null;
+    setActiveIng: React.Dispatch<React.SetStateAction<CardIngredient>>
+}>({
+    activeIng: null,
+    setActiveIng: () => { },
+})

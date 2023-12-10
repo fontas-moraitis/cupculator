@@ -2,6 +2,24 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+// type Ingredient = {
+//     id: string;
+//     name: {
+//       en: string;
+//       el: string;
+//     };
+//     unit: string;
+//     metrics: {
+//       cup: { us: number };
+//       '1/2': { us: number };
+//       '1/3': { us: number };
+//       '1/4': { us: number };
+//       tbsp: { us: number };
+//       tsp: { us: number };
+//     };
+//   };
+  
+
 const readDataFile = async () => {
     const filePath = path.join(process.cwd(), 'api/data.json');
     const content = await fs.readFile(filePath, { encoding: 'utf-8' });

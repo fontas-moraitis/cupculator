@@ -2,7 +2,12 @@ import React from "react";
 import style from './Header.module.css';
 import useDarkModeDetector from '../../hooks/useDarkModeDetector';
 
-const Header = ({ settingsOpen, setSettingsOpen }) => {
+type HeaderProps = {
+    settingsOpen: boolean;
+    setSettingsOpen: (open: boolean) => void;
+};
+
+const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
     const isDarkTheme = useDarkModeDetector();
 
     return (
