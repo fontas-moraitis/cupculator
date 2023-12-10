@@ -59,7 +59,7 @@ const CardHolder: React.FC = () => {
         const currentScrollContainer = scrollContainer.current;
 
         if (currentScrollContainer) {
-            currentScrollContainer.addEventListener("wheel", handleScroll, { passive: true });
+            currentScrollContainer.addEventListener("wheel", handleScroll);
 
             return () => currentScrollContainer.removeEventListener("wheel", handleScroll);
         }
