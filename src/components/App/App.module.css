@@ -1,7 +1,7 @@
 @import "../../style/_variables.css";
 
 .app {
-  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--color-font-main);
   background: var(--background-color-main);
 }

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { SearchContext } from '../../context/SearchContext.js';
+import { SearchContext } from '../../context/SearchContext.ts';
 import { useTranslation } from "react-i18next";
 import useThemeDetector from '../../hooks/useThemeDetector.js';
 import style from './SearchBar.module.css'

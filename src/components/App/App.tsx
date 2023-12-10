@@ -36,28 +36,31 @@ function App() {
   const [search, setSearch] = useState("");
   const [activeIng, setActiveIng] = useState("");
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [bipEvent, setBipEvent] = useState(null);
+  const [bipEvent, setBipEvent] = useState<Event | null>(null);
   const isDarkTheme = useThemeDetector();
 
   useEffect(() => {
     const metaTags = document.getElementsByTagName('meta');
+
     if (isDarkTheme) {
       metaTags['theme-color'].content = '#000';
     }
 
-    window.addEventListener("beforeinstallprompt", (e) => {
+    window.addEventListener("beforeinstallprompt", (e: Event) => {
       e.preventDefault();
       setBipEvent(e);
     });
 
     if (localStorage.getItem('language')) {
-      i18next.changeLanguage(localStorage.getItem('language'));
+      i18next.changeLanguage(localStorage.getItem('language')!);
     }
   }, [isDarkTheme]);
 
   return (
     <div className={style.app}>
+
       <IntroScreen />
+
       <div className={style.app__container}>
         <ActiveIngredientContext.Provider value={{ activeIng, setActiveIng }}>
           <SearchContext.Provider value={{ search, setSearch }}>
@@ -71,8 +74,8 @@ function App() {
           </SearchContext.Provider>
         </ActiveIngredientContext.Provider>
       </div>
-      {settingsOpen && <UserPreferences bipEvent={bipEvent} />
-      }
+
+      {settingsOpen && <UserPreferences bipEvent={bipEvent} />}
     </div>
   );
 }

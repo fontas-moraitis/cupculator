@@ -1,13 +1,13 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { useRef, useLayoutEffect } from 'react';
 import { gsap, Expo } from 'gsap';
 
 import style from './IntroScreen.module.css';
 
 const IntroScreen = () => {
-  let introWrapperRef = useRef(null);
-  let cup = useRef(null);
-  let culator = useRef(null);
+  let introWrapperRef = useRef<HTMLDivElement>(null);
+  let cup = useRef<HTMLSpanElement>(null);
+  let culator = useRef<HTMLSpanElement>(null);
 
   useLayoutEffect(() => {
     gsap.to(introWrapperRef, 2.9, {
