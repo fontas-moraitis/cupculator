@@ -32,7 +32,7 @@ const CalculatorInput: React.FC<CalculatorInputProps> = ({ label, value, setValu
         value={value || 0}
         className={style.customInput}
         autoComplete="off"
-        onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault()
           setValue(e.target.value)
         }}

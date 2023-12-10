@@ -24,49 +24,52 @@ const CalculatorContainer: React.FC<CalculatorContainerProps> = ({ activeIng }) 
     const { t } = useTranslation();
 
     const [unitAmount, setUnitAmount] = useState(0);
-    const [cupType, setCupType] = useState<'us' | 'uk'>('us');
+    // const [cupType, setCupType] = useState<'us' | 'uk'>('us'); // TODO: update when uk measurements
     const [cupAmount, setCupAmount] = useState(1);
+
+    const handleUnitAmountChange = (unitAmount: number) => {
+        setUnitAmount(unitAmount);
+
+        const calculatedAmount = unitAmount / (Number(activeIng.metrics?.cup['us']) || 0);
+        const rounded = Math.round((calculatedAmount + Number.EPSILON) * 100) / 100;
+
+        // Set cups a multiples of 0.25
+        const normalizedCupNumber = Math.round(rounded * 4) / 4;
+        setCupAmount(normalizedCupNumber);
+    }
 
     const handleCupAmountChange = (cupsAmount: number) => {
         setCupAmount(cupsAmount);
+
         // Calculate ingredient amount based on number of cups
-        const newUnitAmount = cupsAmount * (activeIng?.metrics?.cup[cupType]);
+        const newUnitAmount = cupsAmount * activeIng?.metrics?.cup['us'];
         setUnitAmount(newUnitAmount);
     }
 
     useEffect(() => {
         // Sets default unit amount based on selected ingredient
-        setUnitAmount(activeIng.metrics?.cup.us)
+        setUnitAmount(activeIng.metrics?.cup.us);
+        setCupAmount(1);
     }, [activeIng]);
 
-    useEffect(() => {
-        // Calculate number of cups
-        const calcedAmount = (unitAmount / activeIng.metrics?.cup[cupType]);
-        const roundedCalcedAmount = Math.round((calcedAmount + Number.EPSILON) * 100) / 100;
-
-        // Set cups a multiples of 0.25 with a min of 0.25
-        const normalizedCupNumber = Math.round(roundedCalcedAmount * 4) / 4;
-        setCupAmount(normalizedCupNumber < 0.25 ? 0.25 : normalizedCupNumber);
-
-        return () => setCupAmount(1);
-    }, [unitAmount, cupType, activeIng])
-
     return (
-        <section className={style.calculatorContainer}>
+        <form className={style.calculatorContainer}>
             <CalculatorInput
                 label={t('grams')}
                 placeholder={t('quantity')}
                 value={unitAmount}
-                setValue={setUnitAmount}
+                setValue={handleUnitAmountChange}
             />
+
             <div className={style.calculatorContainer__separator}>{t('to')}</div>
+
             <CalculatorInput
                 label={t('cups')}
                 placeholder={t('quantity')}
                 value={cupAmount}
                 setValue={handleCupAmountChange}
             />
-        </section>
+        </form>
     )
 };
 

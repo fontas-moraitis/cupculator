@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
         setSettingsOpen(!settingsOpen);
 
         if ("vibrate" in navigator) {
-            navigator.vibrate(200); // Vibrate for 200 milliseconds
+            navigator.vibrate(200);
         }
     }
 
