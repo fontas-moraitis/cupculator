@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import { SearchContext } from '../../context/SearchContext';
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import style from './App.module.css';
-import useThemeDetector from '../../hooks/useThemeDetector';
+import useThemeDetector from '../../hooks/useDarkModeDetector';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import CardHolder from '../CardHolder/CardHolder';

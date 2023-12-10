@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '../../context/SearchContext.ts';
 import { useTranslation } from "react-i18next";
-import useThemeDetector from '../../hooks/useThemeDetector.js';
+import useDarkModeDetector from '../../hooks/useDarkModeDetector.ts';
 import style from './SearchBar.module.css'
 
 const SearchBar = () => {
@@ -9,7 +9,7 @@ const SearchBar = () => {
 	const [placeholder, setPlaceholder] = useState(null);
 	const { search, setSearch } = useContext(SearchContext);
 
-	const isDarkTheme = useThemeDetector();
+	const isDarkTheme = useDarkModeDetector();
 
 	useEffect(() => { setPlaceholder(t('searchIngredient')) }, [t]);
 

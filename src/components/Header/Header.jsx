@@ -1,9 +1,9 @@
 import React from "react";
 import style from './Header.module.css';
-import useThemeDetector from '../../hooks/useThemeDetector.js';
+import useDarkModeDetector from '../../hooks/useDarkModeDetector';
 
 const Header = ({ settingsOpen, setSettingsOpen }) => {
-    const isDarkTheme = useThemeDetector();
+    const isDarkTheme = useDarkModeDetector();
 
     return (
         <header className={style.header_container}>
