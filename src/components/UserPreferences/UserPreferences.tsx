@@ -46,7 +46,7 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
   );
 
   useLayoutEffect(() => {
-    gsap.from(userPrefs, .6, {
+    gsap.from(userPrefs.current, .6, {
       top: '200vh',
       opacity: 0,
       ease: Expo.easeInOut,
@@ -62,7 +62,7 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
   }, []);
 
   return (
-    <div ref={el => userPrefs = el} className={style.container}>
+    <div ref={userPrefs} className={style.container}>
       <h2 className={style.container__title}>
         {t('userPreferencesTitle')}
       </h2>
