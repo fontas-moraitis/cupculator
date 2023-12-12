@@ -17,8 +17,26 @@ export default defineConfig({
                             cacheName: "api",
                             cacheableResponse: {
                                 statuses: [0, 200]
+                            },
+                            expiration: {
+                                maxEntries: 50,
+                                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
                             }
                         }
+                    },
+                    {
+                        urlPattern: /\.(?:svg)$/,
+                        handler: 'CacheFirst',
+                        options: {
+                            cacheName: 'images',
+                            cacheableResponse: {
+                                statuses: [0, 200],
+                            },
+                            expiration: {
+                                maxEntries: 50,
+                                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+                            }
+                        },
                     }
                 ]
             }
