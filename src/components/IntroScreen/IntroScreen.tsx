@@ -17,23 +17,47 @@ const IntroScreen = () => {
       ease: Expo.easeInOut,
     });
 
-    gsap.from(cup.current, 1.6, {
-      y: '-200vh',
-      opacity: 0.5,
-      ease: Expo.easeInOut,
-    });
+    gsap.fromTo(
+      cup.current,
+      {
+        y: '-200vh',
+        opacity: 0.5,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: '0',
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 1.6,
+      });
 
-    gsap.from(culator.current, 1.6, {
-      y: '200vh',
-      opacity: 0.5,
-      ease: Expo.easeInOut,
-    });
+    gsap.fromTo(
+      culator.current,
+      {
+        y: '200vh',
+        opacity: 0.5,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: '0',
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 1.6,
+      });
 
-    gsap.to([cup.current, culator.current], .6, {
-      delay: 1.6,
-      opacity: 0,
-      ease: Expo.easeInOut,
-    });
+    gsap.fromTo(
+      [cup.current, culator.current],
+      {
+        delay: 1.6,
+        opacity: 1,
+        ease: Expo.easeInOut,
+      },
+      {
+        delay: 1.6,
+        opacity: 0,
+        ease: Expo.easeInOut,
+        duration: 0.6,
+      });
   }, []);
 
   return (

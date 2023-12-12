@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
     const handleClickButton = () => {
         setSettingsOpen(!settingsOpen);
 
-        if ("vibrate" in navigator) {
+        if (!!navigator.vibrate) {
             navigator.vibrate(200);
         }
     }
@@ -30,21 +30,19 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
                 aria-label="User preferences button"
                 onClick={handleClickButton}
             >
-                {
-                    settingsOpen ?
-                        <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                            <g data-v-cd28a988=""><line x1="4" y1="4" x2="20" y2="20" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
-                                <line x1="4" y1="20" x2="20" y2="4" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
-                            </g>
-                        </svg> :
-                        <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                            <g data-v-cd28a988="">
-                                <line x1="4" y1="7" x2="20" y2="7" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
-                                <line x1="4" y1="12" x2="20" y2="12" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
-                                <line x1="4" y1="17" x2="20" y2="17" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
-                            </g>
-                        </svg>
-                }
+                {settingsOpen ?
+                    <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                        <g data-v-cd28a988=""><line x1="4" y1="4" x2="20" y2="20" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+                            <line x1="4" y1="20" x2="20" y2="4" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+                        </g>
+                    </svg> :
+                    <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                        <g data-v-cd28a988="">
+                            <line x1="4" y1="7" x2="20" y2="7" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+                            <line x1="4" y1="12" x2="20" y2="12" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+                            <line x1="4" y1="17" x2="20" y2="17" stroke={isDarkTheme ? '#fff' : '#000'} strokeWidth="2" strokeLinecap="round"></line>
+                        </g>
+                    </svg>}
             </button>
         </header>
     )

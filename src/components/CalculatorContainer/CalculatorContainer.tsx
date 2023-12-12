@@ -20,7 +20,6 @@ const CalculatorContainer: React.FC<CalculatorContainerProps> = ({ activeIng }) 
      * @property {Object} activeIng -- The currently selected ingredient, defaults to flour
      * @function handleCupAmountChange -- Sets number of cups and unit amount
      */
-
     const { t } = useTranslation();
 
     const [unitAmount, setUnitAmount] = useState(0);

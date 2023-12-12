@@ -59,7 +59,8 @@
   border: 1px solid var(--color-dark-grey);
 }
 
-@media (display-mode: standalone), (display-mode: minimal-ui) {
+@media (display-mode: standalone),
+(display-mode: minimal-ui) {
   .installBtn {
     display: none;
   }

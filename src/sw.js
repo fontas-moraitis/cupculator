@@ -7,7 +7,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 // Network first strategy for API requests
 registerRoute(
-    ({ url }) => url.pathname.startsWith('/api/'),
+    ({ url }) => url.pathname.includes('api'),
     new NetworkFirst()
 );
 

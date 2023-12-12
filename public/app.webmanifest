@@ -1,9 +1,9 @@
 {
   "name": "Cupculator",
   "short_name": "Cupculator",
-  "start_url": "./",
+  "start_url": "../",
   "id": "/",
-  "scope": "./",
+  "scope": "../",
   "icons": [
     {
       "src": "assets/logo/favicon16.png",

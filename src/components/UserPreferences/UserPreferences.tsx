@@ -46,19 +46,20 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
   );
 
   useLayoutEffect(() => {
-    gsap.from(userPrefs.current, .6, {
-      top: '200vh',
-      opacity: 0,
-      ease: Expo.easeInOut,
-    });
-
-    return () => {
-      gsap.to(userPrefs.current, .6, {
+    gsap.fromTo(
+      userPrefs.current,
+      {
         top: '200vh',
         opacity: 0,
         ease: Expo.easeInOut,
-      });
-    };
+      },
+      {
+        top: '10vh',
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 0.6,
+      },
+    );
   }, []);
 
   return (
@@ -83,7 +84,8 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
         </svg>
         <span>{t('installBtn')}</span>
       </button>
-      <button
+
+      {!!navigator.share && <button
         type="button"
         aria-label="share app"
         className={style.shareBtn}
@@ -96,7 +98,7 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
           </g>
         </svg>
         <span>{t('shareBtn')}</span>
-      </button>
+      </button>}
     </div>
   );
 }
