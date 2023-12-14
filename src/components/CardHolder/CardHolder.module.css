@@ -15,26 +15,36 @@
     display: none;
 }
 
-@media screen and (min-width: 768px) { 
+.cardholderError {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
     .cardholder {
         min-height: 125px;
         padding: var(--spacing-xsmall);
     }
 
     .cardholder::-webkit-scrollbar {
-        width: 8px; /* Mostly for vertical scrollbars */
-        height: 8px; /* Mostly for horizontal scrollbars */
+        width: 8px;
+        /* Mostly for vertical scrollbars */
+        height: 8px;
+        /* Mostly for horizontal scrollbars */
         display: block;
     }
 
-    .cardholder::-webkit-scrollbar-thumb { /* Foreground */
+    .cardholder::-webkit-scrollbar-thumb {
+        /* Foreground */
         background: var(--color-light);
         border-radius: var(--border-radius-large);
     }
 
-    .cardholder::-webkit-scrollbar-track { /* Background */
+    .cardholder::-webkit-scrollbar-track {
+        /* Background */
         background: #FAFAF8;
         border-radius: var(--border-radius-large);
     }
 }
-   

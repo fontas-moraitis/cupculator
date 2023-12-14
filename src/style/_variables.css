@@ -1,53 +1,56 @@
 :root {
   /* colors */
-    --color-white: #fff;
-    --color-light: #efefe8; /* Search field and icons background */
-    --color-grey: #566573;
-    --color-dark-grey: #2F2C33;
-    --color-dark: #222;
-    --color-main: #ffb703;
-    --color-secondary: #F4F4F0; /* table rows */
-    --color-highlight: #DFA000;
-    --background-color-main: #fff;
-   
-    --color-font-light: #7c7c7c;
-    --color-font-main: #222;
-  
-    /* spacing */
-    --max-width: 768px;
+  --color-white: #fff;
+  --color-light: #efefe8;
+  /* Search field and icons background */
+  --color-grey: #566573;
+  --color-dark-grey: #2F2C33;
+  --color-dark: #222;
+  --color-black: #000;
+  --color-main: #ffb703;
+  --color-secondary: #F4F4F0;
+  /* table rows */
+  --color-highlight: #DFA000;
+  --background-color-main: #fff;
 
-    --spacing-xxsmall: 4px;
-    --spacing-xsmall: 6px;
-    --spacing-small: 10px;
-    --spacing-regular: 12px;
-    --spacing-large: 24px;
-    --spacing-xlarge: 34px;
+  --color-font-light: #7c7c7c;
+  --color-font-main: #222;
 
-    /* fonts */
-    --font-weight-thin: 300;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
+  /* spacing */
+  --max-width: 768px;
 
-    /* font-sizes */
-    --font-size-xsmall: 12px;
-    --font-size-small: 13px;
-    --font-size-regular: 14px;
-    --font-size-input: 18px;
-    --font-size-large: 24px;
-    --font-size-xlarge: 32px;
+  --spacing-xxsmall: 4px;
+  --spacing-xsmall: 6px;
+  --spacing-small: 10px;
+  --spacing-regular: 12px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 34px;
 
-    /* sizes */
-    --border-radius-small: 6px;
-    --border-radius-large: 20px;
+  /* fonts */
+  --font-weight-thin: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 
-    --button-min-height: 48px;
-    --button-min-width: 48px;
+  /* font-sizes */
+  --font-size-xsmall: 12px;
+  --font-size-small: 13px;
+  --font-size-regular: 14px;
+  --font-size-input: 18px;
+  --font-size-large: 24px;
+  --font-size-xlarge: 32px;
 
-    --card-width: 88px;
-    --card-height: 120px;
-    --element-width: 140px;
-    --element-width-small: 80px;
+  /* sizes */
+  --border-radius-small: 6px;
+  --border-radius-large: 20px;
+
+  --button-min-height: 48px;
+  --button-min-width: 48px;
+
+  --card-width: 88px;
+  --card-height: 120px;
+  --element-width: 140px;
+  --element-width-small: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,8 +58,10 @@
     --color-main: #ffb703;
     --color-font-main: #fefae0;
     --background-color-main: #000;
-    --color-light: #30363C; /* Search field and icons background */
-    --color-secondary: #212529; /* Table rows */
+    --color-light: #30363C;
+    /* Search field and icons background */
+    --color-secondary: #212529;
+    /* Table rows */
     --color-font-light: #fff;
     --color-grey: #778da9;
   }
