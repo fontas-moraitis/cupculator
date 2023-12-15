@@ -14,13 +14,6 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
         setSettingsOpen(!settingsOpen);
     }
 
-    const handleTouch = () => {
-        if (!!navigator?.vibrate) {
-            navigator.vibrate(200);
-        }
-        setSettingsOpen(!settingsOpen);
-    }
-
     return (
         <header className={style.header_container}>
             <div className={style.header_container_logo}>
@@ -32,7 +25,6 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
                 type="button"
                 aria-label="User preferences button"
                 onClick={handleClickButton}
-                onTouchStart={handleTouch}
             >
                 {settingsOpen ?
                     <svg data-v-cd28a988="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
