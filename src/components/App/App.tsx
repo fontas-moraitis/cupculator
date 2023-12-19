@@ -61,12 +61,13 @@ function App() {
       <IntroScreen />
 
       <div className={style.app__container}>
+        <Header
+          settingsOpen={settingsOpen}
+          setSettingsOpen={setSettingsOpen}
+        />
+
         <ActiveIngredientContext.Provider value={{ activeIng, setActiveIng }}>
           <SearchContext.Provider value={{ search, setSearch }}>
-            <Header
-              settingsOpen={settingsOpen}
-              setSettingsOpen={setSettingsOpen}
-            />
             <SearchBar />
             <CardHolder />
             <MainContainer />

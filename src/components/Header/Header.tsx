@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({ settingsOpen, setSettingsOpen }) => {
             <button
                 type="button"
                 aria-label="User preferences button"
+                className={style.header_preferences_btn}
                 onClick={handleClickButton}
             >
                 {settingsOpen ?

@@ -19,3 +19,11 @@
     margin-bottom: var(--spacing-xsmall);
     color: var(--color-font-main);
 }
+
+.header_preferences_btn {
+    border: 1px solid transparent;
+}
+
+.header_preferences_btn:focus-visible {
+    border: 1px solid var(--color-main);
+}
