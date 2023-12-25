@@ -2,9 +2,13 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import registerServiceWorker from './sw-register';
 import { I18nextProvider } from 'react-i18next';
+import { inject } from '@vercel/analytics';
 import i18n from './i18n';
 import App from './components/App/App';
 import './style/index.css';
+
+
+inject();
 
 const container = document.getElementById('root');
 const root = createRoot(container);
