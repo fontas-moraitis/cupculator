@@ -1,8 +1,13 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
 import style from './TableRow.module.css'
+import { TableData } from "../ConversionsContainer/ConversionsContainer";
 
-const TableRow = ({ data }) => {
+type TableRowProps = {
+  data: TableData;
+}
+
+const TableRow: React.FC<TableRowProps> = ({ data }) => {
   const { activeIng } = useContext(ActiveIngredientContext);
 
   return (

@@ -1,6 +1,6 @@
 :root {
   /* colors */
-  --color-white: #fff;
+  --color-white: #f9fafb;
   --color-light: #efefe8;
   /* Search field and icons background */
   --color-light-grey: #d1d0d0;
@@ -12,7 +12,7 @@
   --color-secondary: #F4F4F0;
   /* table rows */
   --color-highlight: #DFA000;
-  --background-color-main: #fff;
+  --background-color-main: #f9fafb;
 
   --color-font-light: #7c7c7c;
   --color-font-main: #222;

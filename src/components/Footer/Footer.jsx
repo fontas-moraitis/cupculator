@@ -15,8 +15,9 @@ const Footer = () => {
 
   const availableLanguages = langs.map((lang, index) =>
     <button
-      className={activeLang === lang.id ? style.app__footer__btnActive : style.app__footer__btn}
+      aria-label={`language-${index}`}
       key={`language-${index}`}
+      className={activeLang === lang.id ? style.app__footer__btnActive : style.app__footer__btn}
       onClick={() => changeLanguage(lang.id)}
     >
       {lang.label}

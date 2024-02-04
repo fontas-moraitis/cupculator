@@ -1,24 +1,5 @@
-// /api/ingredients.js
 import fs from 'fs/promises';
 import path from 'path';
-
-// type Ingredient = {
-//     id: string;
-//     name: {
-//       en: string;
-//       el: string;
-//     };
-//     unit: string;
-//     metrics: {
-//       cup: { us: number };
-//       '1/2': { us: number };
-//       '1/3': { us: number };
-//       '1/4': { us: number };
-//       tbsp: { us: number };
-//       tsp: { us: number };
-//     };
-//   };
-  
 
 const readDataFile = async () => {
     const filePath = path.join(process.cwd(), 'api/data.json');
@@ -43,7 +24,7 @@ export default async function handler(req, res) {
             return res.status(200).json(listOfIngredients);
         } else if (ingredient) {
             const myIngredient = findIngredientById(data, ingredient);
-            return myIngredient 
+            return myIngredient
                 ? res.status(200).json(myIngredient)
                 : res.status(404).json({ error: 'Ingredient not found' });
         } else {
@@ -52,51 +33,4 @@ export default async function handler(req, res) {
     } catch (e) {
         return res.status(500).json({ error: e.message });
     }
-}
-
-
-// const fs = require("fs").promises;
-// const path = require("path");
-
-// exports.handler = async (event, context, callback) => {
-//     const querystring = event.queryStringParameters;
-//     const content = await fs.readFile(path.join(__dirname, "data.json"), {encoding: "utf-8"});
-//     const parsed = JSON.parse(content);
-
-//     if (querystring.lang) {
-//       let listOfIngredients = parsed.map(ingredient => {
-//         return ({ id: ingredient.id, label: ingredient.name[querystring.lang] });
-//       })
-//       return {
-//         statusCode: 200,
-//         contentType: 'application/json',
-//         charset: 'utf-8',
-//         body: JSON.stringify(listOfIngredients)
-//       };
-//     }
-//   else {
-//     let activeIngredient = querystring.ingredient;
-//     try {
-//       const searchId = (x, id) => {
-//         for(var i = 0; i < x.length; i++) {
-//             if (x[i]['id']==id){
-//                 return x[i];
-//             }
-//         }
-//         return -1;
-//     }
-    
-//     const myIngredient = searchId(parsed, activeIngredient);
-
-//         return {
-//           statusCode: 200,
-//           body: JSON.stringify(myIngredient)
-//         };
-//       } catch (e) {
-//         return {
-//           statusCode: 500,
-//           body: e
-//         };
-//       }
-//     }
-//   };
+};

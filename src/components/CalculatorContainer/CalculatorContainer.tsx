@@ -1,29 +1,28 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import CalculatorInput from '../CalculatorInput/CalculatorInput';
 import style from "./CalculatorContainer.module.css";
 import { Ingredient } from '../../context/ActiveIngredientContext';
+
+/**
+ * User can set either amount in grams or ml and get number of cups
+ * or set number of cups and see amount of grams or ml.
+ * 
+ * @property {Number} unitAmount -- grams or ml depending on unit type
+ * @property {Number} cupAmount -- number of cups
+ * @property {String} cupType -- type of cups Uk or Us
+ * 
+ * @property {Object} activeIng -- The currently selected ingredient, defaults to flour
+ * @function handleCupAmountChange -- Sets number of cups and unit amount
+ */
 
 type CalculatorContainerProps = {
     activeIng: Ingredient
 }
 
 const CalculatorContainer: React.FC<CalculatorContainerProps> = ({ activeIng }) => {
-    /**
-     * User can set either amount in grams or ml and get number of cups
-     * or set number of cups and see amount of grams or ml.
-     * 
-     * @property {Number} unitAmount -- grams or ml depending on unit type
-     * @property {Number} cupAmount -- number of cups
-     * @property {String} cupType -- type of cups Uk or Us
-     * 
-     * @property {Object} activeIng -- The currently selected ingredient, defaults to flour
-     * @function handleCupAmountChange -- Sets number of cups and unit amount
-     */
     const { t } = useTranslation();
-
     const [unitAmount, setUnitAmount] = useState(0);
-    // const [cupType, setCupType] = useState<'us' | 'uk'>('us'); // TODO: update when uk measurements
     const [cupAmount, setCupAmount] = useState(1);
 
     const handleUnitAmountChange = (unitAmount: number) => {
@@ -60,7 +59,9 @@ const CalculatorContainer: React.FC<CalculatorContainerProps> = ({ activeIng }) 
                 setValue={handleUnitAmountChange}
             />
 
-            <div className={style.calculatorContainer__separator}>{t('to')}</div>
+            <p className={style.calculatorContainer__separator}>
+                {t('to')}
+            </p>
 
             <CalculatorInput
                 label={t('cups')}

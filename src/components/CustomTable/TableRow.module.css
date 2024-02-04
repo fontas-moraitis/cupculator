@@ -17,7 +17,7 @@
 .tableIcon {
   height: 100%;
   width: var(--spacing-regular);
-  align-items: center;
+  vertical-align: middle;
 }
 
 .tableIcon img {

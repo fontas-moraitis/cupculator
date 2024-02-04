@@ -2,11 +2,12 @@ import React, { Suspense, useEffect, useRef } from 'react';
 import { useTranslation } from "react-i18next";
 import SpinLoader from '../SpinLoader/SpinLoader'
 import style from './Card.module.css';
+import { CardIngredient } from '../CardHolder/CardHolder';
 
 type IngredientCardProps = {
   ingredient: { label: string; id: string; };
   activeIngredient: string;
-  handleCardSelection: (ingredient: { label: string; id: string; }, e: Event) => {};
+  handleCardSelection: (ingredient: CardIngredient, e: Event) => void;
 }
 
 const IngredientCard: React.FC<IngredientCardProps> = ({ ingredient, activeIngredient, handleCardSelection }) => {

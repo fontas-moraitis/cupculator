@@ -48,7 +48,7 @@
 }
 
 .iconBackground {
-    background-color: var(--color-light-grey);
+    background-color: #000;
     border-radius: 50%;
     width: 60px;
     height: 60px;

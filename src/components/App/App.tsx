@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import i18next from 'i18next';
 import { SearchContext } from '../../context/SearchContext';
-import { ActiveIngredientContext } from '../../context/ActiveIngredientContext';
+import { ActiveIngredientContext, Ingredient } from '../../context/ActiveIngredientContext';
 import style from './App.module.css';
 import useThemeDetector from '../../hooks/useDarkModeDetector';
 import Header from '../Header/Header';
@@ -15,39 +15,39 @@ import IntroScreen from '../IntroScreen/IntroScreen';
  * @property {String} search -- user's input, checked againgt ingredients JSON
  * @property {Object} activeIng -- selected ingredient Object structure:
  * {
-    "id": "idOfIngredient",
-    "name": {
-      "en": "Name of ingredient"
-    },
-    "unit": "Unit example grams",
-    "metrics": {
-      "cup": { "us": Number },
-      "1/2": { "us": Number},
-      "1/3": { "us": Number },
-      "1/4": { "us": Number },
-      "tbsp": { "us": Number },
-      "tsp": { "us": Number }
-    }
-  }
- * 
+ *  "id": "idOfIngredient",
+ *  "name": {
+ *    "en": "Name of ingredient"
+ *  },
+ *  "unit": "Unit example grams",
+ *  "metrics": {
+ *    "cup": { "us": Number },
+ *    "1/2": { "us": Number},
+ *    "1/3": { "us": Number },
+ *    "1/4": { "us": Number },
+ *    "tbsp": { "us": Number },
+ *    "tsp": { "us": Number }
+ *  }
+ * } 
+ *
  */
+
+export interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed', platform: string }>;
+}
+
 function App() {
   const [search, setSearch] = useState("");
-  const [activeIng, setActiveIng] = useState(null);
+  const [activeIng, setActiveIng] = useState<Ingredient | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [bipEvent, setBipEvent] = useState<Event | null>(null);
+  const [bipEvent, setBipEvent] = useState<BeforeInstallPromptEvent | null>(null);
   const isDarkTheme = useThemeDetector();
 
   useEffect(() => {
-    const metaTags = document.getElementsByTagName('meta');
-
-    if (isDarkTheme) {
-      metaTags['theme-color'].content = '#000';
-    }
-
     window.addEventListener("beforeinstallprompt", (e: Event) => {
       e.preventDefault();
-      setBipEvent(e);
+      setBipEvent(e as BeforeInstallPromptEvent);
     });
 
     if (localStorage.getItem('language')) {

@@ -14,7 +14,7 @@ const CustomTable: React.FC<CustomTableProps> = ({ theadData, tbodyData, customC
         <table className={customClass}>
             <thead>
                 <tr>
-                    {theadData.map(item => <TableHeadItem key={item.id} item={item.label} />)}
+                    {theadData.map(item => <TableHeadItem key={item.id} label={item.label} />)}
                 </tr>
             </thead>
             <tbody>

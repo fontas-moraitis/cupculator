@@ -19,7 +19,7 @@ export type Ingredient = {
 
 export const ActiveIngredientContext = createContext<{
     activeIng: Ingredient | null;
-    setActiveIng: React.Dispatch<React.SetStateAction<Ingredient>>
+    setActiveIng: React.Dispatch<React.SetStateAction<Ingredient | null>>
 }>({
     activeIng: null,
     setActiveIng: () => { },

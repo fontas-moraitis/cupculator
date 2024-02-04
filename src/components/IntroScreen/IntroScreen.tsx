@@ -1,4 +1,3 @@
-import React from "react";
 import { useRef, useLayoutEffect } from 'react';
 import { gsap, Expo } from 'gsap';
 

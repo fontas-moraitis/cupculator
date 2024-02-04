@@ -7,7 +7,6 @@ import i18n from './i18n';
 import App from './components/App/App';
 import './style/index.css';
 
-
 inject();
 
 const container = document.getElementById('root');

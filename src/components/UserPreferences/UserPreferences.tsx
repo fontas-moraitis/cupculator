@@ -4,9 +4,10 @@ import { gsap, Expo } from 'gsap';
 import { useTranslation } from 'react-i18next';
 import langs from '../../data/availableLanguages.json';
 import style from './UserPreferences.module.css';
+import { BeforeInstallPromptEvent } from '../App/App';
 
 type UserPreferencesProp = {
-  bipEvent: any;
+  bipEvent: BeforeInstallPromptEvent;
 }
 
 const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
@@ -23,7 +24,7 @@ const UserPreferences: React.FC<UserPreferencesProp> = ({ bipEvent }) => {
     if (bipEvent) {
       bipEvent.prompt();
     } else {
-      alert('To install this app look for Add to Home Screen or Install in browser\'s menu')
+      alert('To install this app click Add to Home Screen or Install in browser\'s menu')
     }
   };
 
